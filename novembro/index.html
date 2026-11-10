@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Europa · Novembro 2026 — Roteiro dos Sócios</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#16202f; --ink2:#3b4658; --muted:#6b7586; --line:#e6e0d4;
+  --paper:#f8f5ee; --card:#ffffff; --gold:#a8792f; --gold-soft:#f3e9d6;
+  --red:#8f2a2a; --green:#2f5d4a; --accent:#1f3a5f;
+  --r:16px;
+}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--paper);color:var(--ink);font-family:Inter,system-ui,sans-serif;font-size:15px;line-height:1.5}
+a{color:inherit}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+header.top{background:linear-gradient(135deg,#121b2a 0%,#1f3a5f 60%,#2b2f4a 100%);color:#fff;padding:36px 0 26px;position:relative;overflow:hidden}
+header.top:after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 85% 20%,rgba(214,175,96,.25),transparent 45%),radial-gradient(circle at 10% 90%,rgba(143,42,42,.25),transparent 40%);pointer-events:none}
+.eyebrow{letter-spacing:.18em;text-transform:uppercase;font-size:11.5px;color:#e5c88f;font-weight:600}
+h1{font-family:Fraunces,serif;font-weight:700;font-size:clamp(30px,5vw,48px);line-height:1.05;margin:8px 0 6px}
+.sub{color:#d6dbe5;max-width:680px}
+.stats{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px;position:relative;z-index:1}
+.stat{background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.15);border-radius:12px;padding:8px 14px}
+.stat b{font-family:Fraunces,serif;font-size:20px;display:block;line-height:1.1}
+.stat span{font-size:12px;color:#cfd6e2}
+
+nav.route{position:sticky;top:0;z-index:20;background:rgba(248,245,238,.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.route-inner{display:flex;gap:8px;overflow-x:auto;padding:12px 20px;max-width:1120px;margin:0 auto;scrollbar-width:none}
+.route-inner::-webkit-scrollbar{display:none}
+.rbtn{flex:0 0 auto;border:1px solid var(--line);background:#fff;border-radius:999px;padding:7px 14px 7px 10px;cursor:pointer;display:flex;align-items:center;gap:8px;font:inherit;color:var(--ink);transition:.15s}
+.rbtn .fl{font-size:16px}
+.rbtn small{color:var(--muted);font-size:11.5px}
+.rbtn.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+.rbtn.on small{color:#c9d1de}
+.rbtn:hover{border-color:var(--gold)}
+
+.legend{display:flex;gap:16px;flex-wrap:wrap;align-items:center;font-size:12.5px;color:var(--muted);margin:18px 0 0}
+.legend .pill{font-weight:700;color:var(--gold)}
+
+/* overview */
+.ov{padding:26px 0 10px}
+.timeline{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px;margin-top:14px}
+.tcard{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:14px 16px;cursor:pointer;transition:.15s;position:relative;overflow:hidden}
+.tcard:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(22,32,47,.08)}
+.tcard .bar{position:absolute;left:0;top:0;bottom:0;width:4px}
+.tcard h3{font-family:Fraunces,serif;margin:2px 0 2px;font-size:20px}
+.tcard .d{font-size:12.5px;color:var(--muted)}
+.tcard .tr{font-size:12px;margin-top:8px;color:var(--ink2)}
+.tag{display:inline-block;font-size:11px;font-weight:600;border-radius:999px;padding:2px 8px;background:var(--gold-soft);color:#7a561d;margin:2px 4px 0 0}
+.tag.red{background:#f6e3e1;color:var(--red)}
+.tag.green{background:#e2efe8;color:var(--green)}
+.tag.blue{background:#e3eaf4;color:var(--accent)}
+
+.panel{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:18px 20px;margin-top:16px}
+.panel h2{font-family:Fraunces,serif;font-size:22px;margin:0 0 4px}
+.panel p.hint{margin:0 0 12px;color:var(--muted);font-size:13.5px}
+.checklist{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:6px 18px}
+.chk{display:flex;gap:10px;align-items:flex-start;padding:7px 0;border-bottom:1px dashed var(--line);cursor:pointer}
+.chk input{margin-top:3px;accent-color:var(--green);width:16px;height:16px}
+.chk .t{font-weight:600;font-size:14px}
+.chk .s{font-size:12.5px;color:var(--muted)}
+.chk.done .t{text-decoration:line-through;color:var(--muted)}
+
+/* city */
+.city{display:none;padding-bottom:60px}
+.city.on{display:block}
+.hero{border-radius:22px;margin-top:22px;padding:26px 26px 22px;color:#fff;position:relative;overflow:hidden}
+.hero:after{content:"";position:absolute;right:-60px;top:-60px;width:260px;height:260px;border-radius:50%;background:rgba(255,255,255,.08)}
+.hero h2{font-family:Fraunces,serif;font-size:clamp(32px,5vw,46px);margin:2px 0 4px;line-height:1}
+.hero .meta{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px;position:relative;z-index:1}
+.hero .chip{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.2);padding:5px 11px;border-radius:999px;font-size:12.5px}
+.hero .lead{max-width:760px;color:rgba(255,255,255,.9);margin-top:10px;position:relative;z-index:1}
+
+.subtabs{display:flex;gap:6px;margin:18px 0 6px;flex-wrap:wrap}
+.st{border:1px solid var(--line);background:#fff;border-radius:10px;padding:8px 14px;font:inherit;font-weight:600;font-size:13.5px;cursor:pointer;color:var(--ink2)}
+.st.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+.pane{display:none}
+.pane.on{display:block}
+
+.alerts{display:grid;gap:8px;margin:14px 0 4px}
+.alert{background:#fff8ec;border:1px solid #efd9b2;border-left:4px solid var(--gold);border-radius:10px;padding:10px 14px;font-size:13.5px}
+.alert.red{background:#fbf0ef;border-color:#eccac6;border-left-color:var(--red)}
+.alert.green{background:#eef6f1;border-color:#cfe3d7;border-left-color:var(--green)}
+.alert b{font-weight:700}
+
+/* days */
+.days{display:grid;gap:12px;margin-top:12px}
+.day{background:#fff;border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+.dayh{display:flex;align-items:center;gap:14px;padding:14px 18px;border-bottom:1px solid var(--line);background:#fcfaf5}
+.date{text-align:center;min-width:52px}
+.date .n{font-family:Fraunces,serif;font-size:26px;font-weight:700;line-height:1}
+.date .w{font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--muted)}
+.dayh h4{margin:0;font-family:Fraunces,serif;font-size:19px;font-weight:600}
+.dayh .note{font-size:12.5px;color:var(--muted)}
+.slots{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
+.slot{padding:12px 18px;border-right:1px solid var(--line)}
+.slot:last-child{border-right:0}
+.slot .lbl{font-size:11px;text-transform:uppercase;letter-spacing:.12em;font-weight:700;color:var(--gold);margin-bottom:4px}
+.slot p{margin:0;font-size:14px;color:var(--ink2)}
+
+/* filters & cards */
+.filters{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:14px 0 4px}
+.fbtn{border:1px solid var(--line);background:#fff;border-radius:999px;padding:6px 12px;font:inherit;font-size:13px;cursor:pointer;color:var(--ink2)}
+.fbtn.on{background:var(--gold);border-color:var(--gold);color:#fff}
+.sep{width:1px;height:22px;background:var(--line);margin:0 4px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:14px;margin-top:12px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:16px 18px 14px;display:flex;flex-direction:column;gap:8px;position:relative}
+.card h5{font-family:Fraunces,serif;font-size:19px;margin:0;padding-right:36px;line-height:1.2}
+.card .type{font-size:13px;color:var(--ink2);font-weight:500}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.price{font-weight:700;letter-spacing:.06em;color:var(--gold);font-size:14px}
+.price .off{color:#ddd3c0}
+.hours{font-size:12.5px;color:var(--ink2);background:#f6f3ec;border-radius:8px;padding:6px 9px}
+.why{font-size:13.5px;color:var(--ink2);margin:0}
+.order{font-size:13px;margin:0}
+.order b{color:var(--red)}
+.links{display:flex;gap:8px;margin-top:auto;padding-top:6px}
+.lk{font-size:12.5px;font-weight:600;text-decoration:none;border:1px solid var(--line);border-radius:8px;padding:5px 10px;color:var(--ink2)}
+.lk:hover{border-color:var(--gold);color:var(--gold)}
+.fav{position:absolute;top:12px;right:12px;border:0;background:transparent;font-size:20px;cursor:pointer;line-height:1;color:#c9bfae}
+.fav.on{color:var(--red)}
+.empty{color:var(--muted);padding:20px;text-align:center}
+
+.vis{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px;margin-top:12px}
+.vcard{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:15px 18px;display:flex;flex-direction:column;gap:6px}
+.vcard h5{font-family:Fraunces,serif;font-size:18px;margin:0}
+.vcard p{margin:0;font-size:13.5px;color:var(--ink2)}
+.prio{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+.prio.p1{color:var(--red)} .prio.p2{color:var(--gold)} .prio.p3{color:var(--muted)}
+
+.xmas-note{margin:14px 0 4px;background:linear-gradient(135deg,#2f5d4a,#1f4436);color:#fff;border-radius:14px;padding:14px 18px;font-size:14px}
+.mk-list{display:grid;gap:12px;margin-top:12px}
+.mk{display:flex;gap:14px;background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:16px 18px}
+.mk-num{flex:0 0 34px;height:34px;border-radius:50%;background:var(--red);color:#fff;font-family:Fraunces,serif;font-weight:700;display:flex;align-items:center;justify-content:center}
+.mk-body{flex:1;min-width:0}
+.mk h5{font-family:Fraunces,serif;font-size:19px;margin:2px 0 8px}
+.mk-meta{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:12.5px;color:var(--ink2)}
+.mk-fit{margin:10px 0;background:#eef6f1;border-radius:8px;padding:7px 10px;font-size:13px;color:var(--green)}
+.mk-cols{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.mk-cols .lbl{font-size:11px;text-transform:uppercase;letter-spacing:.12em;font-weight:700;color:var(--gold);margin-bottom:3px}
+.mk-cols p{margin:0;font-size:13.5px;color:var(--ink2)}
+.must-h{font-family:Fraunces,serif;font-size:20px;margin:22px 0 0}
+.vcard.must{border-left:4px solid var(--gold)}
+.vcard.must.beber{border-left-color:var(--red)}
+.vcard.must.fazer{border-left-color:var(--accent)}
+.vcard.must.curiosidade{border-left-color:var(--green)}
+@media (max-width:640px){.mk-cols{grid-template-columns:1fr}.mk{padding:14px}}
+footer{padding:30px 0 50px;color:var(--muted);font-size:12.5px;border-top:1px solid var(--line);margin-top:20px}
+@media (max-width:640px){
+  .slot{border-right:0;border-bottom:1px solid var(--line)}
+  .slot:last-child{border-bottom:0}
+  .grid,.vis{grid-template-columns:1fr}
+  .hero{padding:22px 18px}
+}
+</style>
+</head>
+<body>
+<noscript><div style="background:#8f2a2a;color:#fff;padding:16px 20px;font:600 15px system-ui;text-align:center">Este guia é interativo. Toque em compartilhar (⋯) e escolha <u>Abrir no Safari</u> ou <u>Abrir no Chrome</u>.</div></noscript>
+
+<header class="top">
+  <div class="wrap" style="position:relative;z-index:1">
+    <div class="eyebrow">Roteiro dos sócios · 15/11 → 26/11/2026</div>
+    <h1>Roma, Alpes &amp; Praga</h1>
+    <div class="sub">Roma, Munique, o Tirol do AQUA DOME, Praga e um dia de outlet: 4 países e 10 noites, a maior parte de carro. Roteiro por dia, onde comer, onde terminar a noite, mercados de Natal e o que a estrada exige em novembro.</div>
+    <div class="stats">
+      <div class="stat"><b id="countdown">—</b><span>para o embarque</span></div>
+      <div class="stat"><b>10</b><span>noites</span></div>
+      <div class="stat"><b>4</b><span>países</span></div>
+      <div class="stat"><b>34</b><span>restaurantes</span></div><div class="stat"><b>12</b><span>paradas de Natal</span></div>
+    </div>
+  </div>
+</header>
+
+<nav class="route"><div class="route-inner" id="routeNav"></div></nav>
+
+<main class="wrap">
+  <section id="overview" class="ov city on"></section>
+  <div id="cities"></div>
+</main>
+
+<footer class="wrap">
+  Restaurantes escolhidos por tradição e frequência de locais, não por viralização. Os horários são a referência habitual de cada casa: <b>em dezembro mudam muito</b> (folgas, eventos de fim de ano). Confirme no TheFork ou no Google Maps e reserve o jantar com antecedência. Seus ♥ e itens marcados ficam salvos neste navegador.
+</footer>
+
+<script>
+const PRICE = {1:"até €25",2:"€25–45",3:"€45–75",4:"€75–120",5:"€120+"};
+
+const CITIES = [
+{
+ id:"roma", name:"Roma", country:"Itália", flag:"🇮🇹", color:"linear-gradient(135deg,#3a1414,#8f2a2a)", bar:"#8f2a2a",
+ dates:"16/11 → 18/11", nights:2, weather:"10–17 °C", sunset:"~16h50",
+ transport:"Chegada de São Paulo · Saída: voo para Munique (18/11)",
+ lead:"Duas noites, então é Roma concentrada: Coliseu, Vaticano, centro histórico e as melhores mesas romanas. Novembro é baixa temporada, com filas menores, clima ameno e o começo da estação da alcachofra romana.",
+ alerts:[
+  {c:"red",t:"<b>Museus Vaticanos</b>: reservem já no site oficial (museivaticani.va) para terça, 17/11. A Galleria Borghese fecha às segundas, então só daria na terça."},
+  {c:"",t:"<b>Coliseu</b>: comprem para 17/11 às 9h. <b>Pantheon</b>: €7 com horário marcado, só no site oficial."},
+  {c:"green",t:"<b>Quarta, 18/11 de manhã</b>: o Papa faz a Audiência Geral na Praça São Pedro às quartas. É gratuita, mas o ingresso precisa ser pedido com antecedência. Só vale se o voo para Munique for à tarde."},
+  {c:"",t:"<b>Sem carro em Roma</b>: andem a pé, de táxi ou de app (FreeNow). O carro só começa em Munique."}
+ ],
+ days:[
+  {d:"16",w:"Seg",t:"Chegada · centro histórico a pé",n:"Dia leve depois do voo noturno",m:"Check-in, banho e cappuccino com cornetto no balcão.",a:"Pantheon → Piazza Navona → Campo de' Fiori → Fontana di Trevi → Escadaria da Espanha. Tudo a pé, uns 3 km.",e:"Aperitivo no Freni e Frizioni (Trastevere), jantar no Roscioli e drink no Jerry Thomas."},
+  {d:"17",w:"Ter",t:"Coliseu · Fórum · Vaticano",n:"O dia grande de Roma",m:"Coliseu às 9h → Fórum Romano → Palatino (cerca de 3h30).",a:"Almoço no Armando al Pantheon (reserve) ou supplì no Supplizio → Museus Vaticanos e Capela Sistina (horário reservado) → Basílica de São Pedro.",e:"Jantar no Pierluigi (frutos do mar, clientela de executivos romanos) ou no Checchino; drink no Stravinskij Bar do Hotel de Russie."},
+  {d:"18",w:"Qua",t:"Manhã livre e voo para Munique",n:"",m:"Audiência Geral do Papa (~9h) ou Aventino: o buraco da fechadura e o Giardino degli Aranci.",a:"Voo para Munique.",e:"Chegada em Munique (veja a aba Munique)."}
+ ],
+ food:[
+  {n:"Armando al Pantheon",t:"Romano clássico · desde 1961",p:3,m:["almoço","jantar"],h:"Seg–Sex almoço e jantar · Sáb almoço · fecha dom",a:"A 50 m do Pantheon",w:"Família no comando há três gerações. Ao lado do monumento mais turístico, mas cheio de romanos. Reserve com antecedência.",o:"Cacio e pepe, abbacchio e torta della nonna."},
+  {n:"Roscioli Salumeria con Cucina",t:"Salumeria & cozinha romana",p:4,m:["almoço","jantar"],h:"Diário · ~12h30–16h / 19h–23h30",a:"Campo de' Fiori",w:"Balcão de frios e queijos de outro nível e a carbonara de referência da cidade. A carta de vinhos é excelente para a mesa.",o:"Carbonara, burrata e prosciutto de Cinta Senese."},
+  {n:"Pierluigi",t:"Frutos do mar · clássico romano",p:4,m:["almoço","jantar"],h:"Diário · almoço e jantar (confirme)",a:"Piazza de' Ricci · perto de Campo de' Fiori",w:"Casa tradicional frequentada por políticos, empresários e a sociedade romana. Peixe cru e grelhados de primeira, com mesas na praça.",o:"Crudo di mare e linguine all'astice."},
+  {n:"Da Cesare al Casaletto",t:"Trattoria romana",p:2,m:["almoço","jantar"],h:"Fecha às quartas · confirme",a:"Monteverde · bonde 8",w:"Para muitos chefs romanos, a melhor trattoria da cidade. Fica longe do centro e só tem locais.",o:"Fritti (polpette di bollito), gricia e coda alla vaccinara."},
+  {n:"Piperno",t:"Romano-judaico · desde 1860",p:3,m:["almoço","jantar"],h:"Ter–Sáb almoço e jantar · Dom almoço · fecha seg",a:"Gueto Judaico",w:"A casa histórica dos carciofi alla giudia, no Gueto, e novembro já é temporada.",o:"Carciofi alla giudia, fritto misto e filetti di baccalà."},
+  {n:"Checchino dal 1887",t:"Quinto quarto (miúdos romanos)",p:4,m:["almoço","jantar"],h:"Ter–Sáb · fecha dom à noite e seg",a:"Testaccio",w:"Onde nasceu a cozinha do matadouro romano, com uma das adegas mais antigas da cidade. Encaixa na terça, 17/11.",o:"Rigatoni con la pajata e coda alla vaccinara."},
+  {n:"Pizzeria Da Remo",t:"Pizza romana",p:1,m:["jantar"],h:"Seg–Sáb · ~19h–1h",a:"Testaccio",w:"Pizza fina e crocante e fila de romanos. Não aceita reserva: chegue às 19h.",o:"Pizza capricciosa e supplì."},
+  {n:"Supplizio",t:"Supplì artesanal · street food",p:1,m:["almoço"],h:"Seg–Sáb · confirme",a:"Via dei Banchi Vecchi",w:"Lanche rápido entre um passeio e outro, de um chef romano dedicado só ao supplì.",o:"Supplì classico e de cacio e pepe."}
+ ],
+ night:[
+  {n:"Stravinskij Bar · Hotel de Russie",t:"Bar de hotel com jardim",h:"Diário · até tarde",w:"O drink elegante de Roma, no pátio do hotel entre a Piazza del Popolo e a Spagna."},
+  {n:"Jerry Thomas Speakeasy",t:"Speakeasy · coquetéis",h:"Noite · reserva obrigatória",w:"Um dos bares de coquetel mais premiados da Itália, com porta escondida e reserva."},
+  {n:"Drink Kong",t:"Bar de coquetéis · Monti",h:"Diário · noite",w:"Estética neon japonesa e presença nas listas dos melhores bares do mundo."},
+  {n:"Freni e Frizioni",t:"Aperitivo · Trastevere",h:"Diário · fim de tarde",w:"O aperitivo mais animado de Trastevere: buffet incluído no drink e calçada cheia."},
+  {n:"Terrazza Les Etoiles",t:"Rooftop · Prati",h:"Bar diário ~17h30–24h · área interna aquecida",w:"A cúpula de São Pedro bem de frente. Aberto o ano todo."}
+ ],
+ visit:[
+  {n:"Coliseu · Fórum · Palatino",p:1,d:"Ingresso combinado para 17/11 às 9h. Reserve 3h30."},
+  {n:"Museus Vaticanos & Capela Sistina",p:1,d:"Reserve horário para 17/11 à tarde no site oficial."},
+  {n:"Basílica de São Pedro",p:1,d:"Gratuita, com fila de segurança. A subida à cúpula é paga e a vista compensa."},
+  {n:"Pantheon",p:1,d:"€7 com horário marcado. Fica no caminho do dia 16."},
+  {n:"Fontana di Trevi & Escadaria da Espanha",p:2,d:"Melhor à noite ou bem cedo."},
+  {n:"Piazza Navona & Campo de' Fiori",p:2,d:"O mercado de Natal da Navona só monta em dezembro."},
+  {n:"Trastevere",p:2,d:"Bairro boêmio para o aperitivo e o jantar."},
+  {n:"Aventino",p:3,d:"Buraco da fechadura dos Cavaleiros de Malta e Giardino degli Aranci. Bom para a manhã do dia 18."}
+ ]
+},
+{
+ id:"munique", name:"Munique", country:"Alemanha", flag:"🇩🇪", color:"linear-gradient(135deg,#14284a,#2f6ea8)", bar:"#2f6ea8",
+ dates:"18–20/11 + 24–26/11", nights:4, weather:"0–7 °C", sunset:"~16h35",
+ transport:"Chegada de avião · base do carro · voo de volta em 26/11",
+ lead:"Munique aparece duas vezes. Na ida (18–20) é cervejaria, BMW e cidade. Na volta (24–26) o Christkindlmarkt já estará aberto: 2026 é o primeiro ano em que ele começa antes, em 20/11.",
+ alerts:[
+  {c:"green",t:"<b>Christkindlmarkt do Marienplatz: 20/11 a 24/12/2026</b>, fechado no dia 22/11. Vocês pegam nas noites de 24 e 25/11."},
+  {c:"",t:"<b>Carro</b>: se der, retirem só no dia 20, na saída para a Áustria. Nos dias 18 e 19 Munique se faz de U-Bahn e S-Bahn, e estacionar no centro é caro. Na retirada, confirmem pneus de inverno e <b>autorização para entrar na República Tcheca</b>, porque algumas locadoras cobram taxa ou restringem."},
+  {c:"",t:"<b>Glockenspiel</b> do Marienplatz: no inverno toca às 11h e às 12h."},
+  {c:"red",t:"<b>Dia 26 · tax free</b>: carimbem as notas na alfândega do aeroporto <b>antes</b> de despachar as malas com as compras."}
+ ],
+ days:[
+  {d:"18",w:"Qua",t:"Chegada · Altstadt e primeira cervejaria",n:"Voo de Roma",m:"Voo.",a:"Marienplatz → Frauenkirche → Viktualienmarkt → Hofbräuhaus (uma vez na vida).",e:"Jantar no Augustiner Bräustuben e drink no Schumann's."},
+  {d:"19",w:"Qui",t:"BMW · Residenz · Englischer Garten",n:"",m:"Weißwurst no café da manhã da Gaststätte Großmarkthalle (antes do meio-dia, é a tradição) → BMW Welt e BMW Museum, no Olympiapark.",a:"Residenz → Hofgarten → Englischer Garten e os surfistas do Eisbach → subida no Alter Peter ao pôr do sol.",e:"Jantar no Spatenhaus an der Oper ou no Brenner Grill; drink no Blue Spa Bar do Bayerischer Hof, com vista para as torres da Frauenkirche."},
+  {d:"20",w:"Sex",t:"Retirada do carro · rumo ao Tirol",n:"Veja a aba Áustria",m:"Carro e estrada (opção: Neuschwanstein no caminho).",a:"—",e:"—"},
+  {d:"24",w:"Ter",t:"Volta de Praga · Christkindlmarkt",n:"~4h de estrada desde Praga",m:"Estrada.",a:"Check-in.",e:"Christkindlmarkt do Marienplatz e Kripperlmarkt, Glühwein e jantar no Andechser am Dom ou no Schneider Bräuhaus."},
+  {d:"25",w:"Qua",t:"Outletcity Metzingen",n:"Veja a aba Metzingen",m:"Saída às 7h30.",a:"Outlet.",e:"Volta a Munique, último jantar no Haxnbauer e Christkindlmarkt."},
+  {d:"26",w:"Qui",t:"Voo de volta",n:"Devolução do carro no aeroporto",m:"Chegue com 3h30 de antecedência: tax free na alfândega antes do check-in.",a:"—",e:"—"}
+ ],
+ food:[
+  {n:"Augustiner Bräustuben",t:"Bávaro · cervejaria",p:2,m:["almoço","jantar"],h:"Diário · ~10h–24h",a:"Landsberger Str. · dentro da cervejaria Augustiner",w:"No prédio da Augustiner, a cerveja favorita dos muniquenses. Clima de vizinhança e preço justo.",o:"Schweinebraten com Knödel e Augustiner Edelstoff."},
+  {n:"Schneider Bräuhaus im Tal",t:"Cervejaria de trigo",p:2,m:["almoço","jantar"],h:"Diário · almoço e jantar",a:"Tal · perto do Marienplatz",w:"Casa da cerveja de trigo Schneider Weisse, com salões antigos e cozinha bávara correta.",o:"Kalbsgulasch e uma Schneider Aventinus."},
+  {n:"Zum Franziskaner",t:"Bávaro clássico",p:3,m:["almoço","jantar"],h:"Diário · almoço e jantar",a:"Residenzstraße",w:"Salões de madeira tradicionais e serviço afinado. É referência em Weißwurst.",o:"Weißwurst (de manhã) ou Schweinshaxe."},
+  {n:"Spatenhaus an der Oper",t:"Bávaro elegante",p:3,m:["almoço","jantar"],h:"Diário · almoço e jantar",a:"Max-Joseph-Platz · em frente à Ópera",w:"Bávaro de toalha branca, com vista da praça da Ópera. Ótimo para um jantar de sócios.",o:"Wiener Schnitzel ou Tafelspitz."},
+  {n:"Andechser am Dom",t:"Bávaro · cerveja do mosteiro",p:2,m:["almoço","jantar"],h:"Diário · almoço e jantar",a:"Atrás da Frauenkirche",w:"Serve a cerveja do mosteiro de Andechs e fica a 2 minutos do mercado de Natal.",o:"Haxe e Andechser Doppelbock."},
+  {n:"Haxnbauer",t:"Joelho de porco no espeto",p:3,m:["almoço","jantar"],h:"Diário · almoço e jantar",a:"Sparkassenstraße · perto do Marienplatz",w:"Os joelhos de porco giram no fogo na vitrine. A pele crocante é referência na cidade.",o:"Schweinshaxe inteira para dividir."},
+  {n:"Brenner Grill",t:"Grelhados · Maximilianstraße",p:3,m:["almoço","jantar"],h:"Diário · até tarde",a:"Maximilianstraße",w:"Antigo estábulo real com abóbadas, grelha aberta e clientela de negócios.",o:"Carnes na brasa e massas."},
+  {n:"Gaststätte Großmarkthalle",t:"Weißwurst-Frühstück",p:1,m:["almoço"],h:"Seg–Sex · cedo até a tarde (confirme)",a:"Kochelseestraße · mercado atacadista",w:"Muitos muniquenses dizem que a melhor Weißwurst da cidade é esta, feita no próprio açougue. É o café da manhã bávaro de verdade.",o:"Weißwurst, Brezn, mostarda doce e Weißbier, antes do meio-dia."}
+ ],
+ night:[
+  {n:"Hofbräuhaus",t:"Cervejaria histórica",h:"Diário · até 24h",w:"Turístico, sim, mas a caneca de 1 litro com banda bávara é obrigatória uma vez."},
+  {n:"Schumann's Bar",t:"Bar lendário",h:"Noite · confirme os dias",w:"O bar de Charles Schumann no Hofgarten, ponto de encontro de executivos e artistas."},
+  {n:"Blue Spa Bar & Lounge · Bayerischer Hof",t:"Rooftop envidraçado",h:"Diário · confirme",w:"No topo do Bayerischer Hof, com vista para as torres da Frauenkirche."},
+  {n:"Falk's Bar · Bayerischer Hof",t:"Bar de hotel",h:"Diário · até tarde",w:"Salão de espelhos histórico. É o drink clássico de Munique."},
+  {n:"Goldene Bar",t:"Bar de coquetéis · Haus der Kunst",h:"Noite · confirme",w:"Paredes douradas dos anos 1930 e drinks autorais. Ótimo depois do Englischer Garten."}
+ ],
+ visit:[
+  {n:"Marienplatz & Glockenspiel",p:1,d:"O coração da cidade. O Glockenspiel toca às 11h e às 12h."},
+  {n:"BMW Welt & BMW Museum",p:1,d:"A BMW Welt é gratuita; o museu é pago. Fica no Olympiapark."},
+  {n:"Christkindlmarkt (na volta)",p:1,d:"Noites de 24 e 25/11. Veja a aba 🎄."},
+  {n:"Residenz",p:2,d:"O palácio dos reis da Baviera, com o Antiquarium renascentista."},
+  {n:"Englischer Garten & Eisbach",p:2,d:"Surfistas na onda do rio, mesmo no frio."},
+  {n:"Alter Peter",p:2,d:"Torre com a melhor vista do centro e dos Alpes em dia claro."},
+  {n:"Viktualienmarkt",p:2,d:"Mercado de comida de rua e cerveja dos locais."},
+  {n:"Allianz Arena",p:3,d:"Tour pelo estádio do Bayern (confirme jogos e horários)."}
+ ]
+},
+{
+ id:"austria", name:"Ötztal & Tirol", country:"Áustria", flag:"🇦🇹", color:"linear-gradient(135deg,#12303a,#3f8a9a)", bar:"#3f8a9a",
+ dates:"20/11 → 22/11", nights:2, weather:"-5–5 °C no vale · bem mais frio no alto", sunset:"~16h35",
+ transport:"Carro: Munique → Längenfeld ~2h30 · Saída: Praga (~6h)",
+ lead:"Base no AQUA DOME, em Längenfeld: termas com piscinas a 34–36 °C de frente para picos de 3.000 m. Em volta ficam Sölden, com o ice Q (cenário de 007), e Innsbruck, com o Christkindlmarkt já aberto.",
+ alerts:[
+  {c:"red",t:"<b>Vinheta austríaca</b> é obrigatória nas autoestradas e é digital, vinculada à placa. <b>Comprada direto no site da ASFINAG, só vale depois de 18 dias.</b> Comprem num posto antes da fronteira ou num revendedor com validade imediata. Custa ~€9,60 (1 dia) ou €12,80 (10 dias)."},
+  {c:"",t:"<b>Sölden (Gaislachkogl, ice Q e 007 Elements)</b>: o inverno abre a partir de meados de novembro, conforme a neve. Confiram no site da Bergbahnen Sölden antes de subir."},
+  {c:"green",t:"<b>AQUA DOME</b>: termas das 9h às 23h e saunas das 10h às 22h, todos os dias. Como hóspedes, aproveitem a noite nas piscinas externas iluminadas."},
+  {c:"",t:"<b>Saunas na Áustria são sem roupa</b> (textilfrei), e é regra, não opção. As piscinas termais são com roupa de banho."},
+  {c:"",t:"<b>Pneus de inverno</b> são obrigatórios na Áustria em condições de inverno. Carro alugado na Alemanha nessa época costuma vir equipado; confirmem."}
+ ],
+ days:[
+  {d:"20",w:"Sex",t:"Munique → (Neuschwanstein) → Längenfeld",n:"Escolham a rota",m:"Rota A, com castelo: Neuschwanstein (2h de Munique; ingresso com horário, reservem) → Fernpass → Ötztal. Rota B, direto via Innsbruck (~2h30).",a:"Check-in no AQUA DOME e termas ao pôr do sol.",e:"Jantar no hotel e sauna à noite."},
+  {d:"21",w:"Sáb",t:"Sölden/ice Q ou Innsbruck · AQUA DOME",n:"Decidam pela neve e pelo tempo",m:"Se o Gaislachkogl estiver aberto: teleférico até 3.048 m, 007 Elements e almoço no ice Q. Senão: Innsbruck (50 min) com Altstadt, Goldenes Dachl e Christkindlmarkt.",a:"Volta para as termas e massagem (reservem no spa).",e:"Jantar no hotel ou, se estiverem em Innsbruck, no Lichtblick com drink no 360° Bar."},
+  {d:"22",w:"Dom",t:"Estrada para Praga",n:"~6h via Munique e Regensburg",m:"Saída às 8h. Opção: almoço em Regensburg, cidade medieval UNESCO com uma das cozinhas de salsicha mais antigas do mundo (Wurstkuchl).",a:"Chegada a Praga no fim da tarde.",e:"—"}
+ ],
+ food:[
+  {n:"Restaurantes do AQUA DOME",t:"Austríaco/alpino · hotel",p:3,m:["almoço","jantar"],h:"Diário",a:"Längenfeld (hospedagem de vocês)",w:"A solução para as duas noites: sem dirigir na neve à noite e com as termas a um elevador de distância.",o:"Kaiserschmarrn de sobremesa."},
+  {n:"ice Q",t:"Alta cozinha alpina · 3.048 m",p:5,m:["almoço"],h:"Inverno: durante o dia (confirme a abertura)",a:"Topo do Gaislachkogl · Sölden",w:"O restaurante premiado mais alto da Áustria, todo de vidro, cenário do filme Spectre. É o almoço que vocês vão lembrar.",o:"Menu do almoço com vinho austríaco."},
+  {n:"FALCON",t:"À la carte · estação intermediária",p:4,m:["almoço"],h:"Temporada de inverno · confirme",a:"Gaislachkogl · Sölden",w:"Alternativa mais acessível ao ice Q, no meio da montanha.",o:"Pratos tiroleses da estação."},
+  {n:"Weisses Rössl",t:"Tirolês tradicional",p:2,m:["almoço","jantar"],h:"Confirme os dias",a:"Altstadt · Innsbruck",w:"Gasthaus histórico do centro antigo com cozinha tirolesa honesta.",o:"Tiroler Gröstl e Speckknödelsuppe."},
+  {n:"Ottoburg",t:"Tirolês numa torre gótica",p:3,m:["almoço","jantar"],h:"Confirme os dias",a:"Altstadt · Innsbruck, à beira do Inn",w:"Restaurante numa torre medieval, com salinhas de madeira em vários andares.",o:"Wiener Schnitzel e Tafelspitz."},
+  {n:"Lichtblick",t:"Contemporâneo · 7º andar",p:4,m:["almoço","jantar"],h:"Seg–Sáb · confirme",a:"Rathausgalerien · Innsbruck",w:"Paredes de vidro com vista para a Nordkette, ao lado do 360° Bar.",o:"Menu da estação."}
+ ],
+ night:[
+  {n:"AQUA DOME à noite",t:"Termas ao ar livre",h:"Até 23h",w:"Piscinas externas aquecidas, montanhas iluminadas e talvez neve caindo. É a noite mais diferente da viagem."},
+  {n:"360° Bar · Innsbruck",t:"Rooftop circular",h:"Confirme",w:"Bar redondo com vista completa dos Alpes sobre a cidade."},
+  {n:"Christkindlmarkt de Innsbruck",t:"Glühwein sob o Telhado Dourado",h:"Diário · 11h–21h",w:"Se forem a Innsbruck no sábado, o fim de tarde é no mercado."},
+  {n:"Après-ski em Sölden",t:"Bares de montanha",h:"Só se a temporada já tiver começado",w:"No início da temporada o movimento é menor. Confirmem antes de ir."}
+ ],
+ visit:[
+  {n:"AQUA DOME",p:1,d:"12 piscinas a 34–36 °C, saunas e as três \"tigelas\" flutuantes externas."},
+  {n:"Gaislachkogl · ice Q · 007 Elements",p:1,d:"3.048 m, instalação de James Bond dentro da montanha. Depende da abertura do inverno."},
+  {n:"Innsbruck · Altstadt & Goldenes Dachl",p:1,d:"Centro medieval com o Telhado Dourado e mercado de Natal. Fica a 50 min."},
+  {n:"Neuschwanstein",p:2,d:"O castelo que inspirou a Disney, no caminho do dia 20. Ingresso com horário."},
+  {n:"Nordkette · Innsbruck",p:2,d:"Funicular de Zaha Hadid e teleférico do centro direto para 2.000 m."},
+  {n:"Regensburg",p:3,d:"Parada para o almoço no caminho para Praga, com a ponte de pedra do século XII."}
+ ]
+},
+{
+ id:"praga", name:"Praga", country:"República Tcheca", flag:"🇨🇿", color:"linear-gradient(135deg,#231a35,#5b4b8a)", bar:"#5b4b8a",
+ dates:"22/11 → 24/11", nights:2, weather:"0–6 °C", sunset:"~16h10",
+ transport:"Carro: ~6h desde Längenfeld · Saída: Munique (~4h)",
+ lead:"Praga em novembro tem neblina no Moldava, cerveja tcheca de tanque e preços bem menores que em Munique. Os grandes mercados de Natal só abrem em 28/11: vocês veem a montagem, e os de bairro já funcionam.",
+ alerts:[
+  {c:"red",t:"<b>Vinheta tcheca (e-dálnice)</b> é obrigatória nas autoestradas. Comprem em edalnice.cz antes de cruzar a fronteira: 1 dia por 230 CZK ou 10 dias por 300 CZK. A fiscalização é por câmera."},
+  {c:"",t:"<b>Estacionar</b>: no centro, as vagas de zona azul são só para moradores. Usem a garagem do hotel ou um P+R e andem de metrô, bonde ou Bolt."},
+  {c:"",t:"<b>Moeda: coroa tcheca (CZK)</b>. Paguem com cartão e nunca troquem dinheiro nas casas de câmbio do centro."}
+ ],
+ days:[
+  {d:"22",w:"Dom",t:"Chegada · Praga à noite",n:"",m:"Estrada.",a:"Check-in e caminhada noturna: Ponte Carlos iluminada → Malá Strana.",e:"Jantar no Lokál Dlouhááá (cerveja de tanque) e drink no Hemingway Bar."},
+  {d:"23",w:"Seg",t:"Castelo · Malá Strana · Cidade Velha",n:"O dia completo",m:"Ponte Carlos às 8h, ainda vazia → Malá Strana → Castelo de Praga (Catedral de São Vito e Viela Dourada) → Biblioteca de Strahov e a cervejaria do mosteiro.",a:"Almoço no Kantýna → Cidade Velha: Relógio Astronômico (toca de hora em hora), Igreja de Týn e Josefov.",e:"Jantar no Mlýnec (vista da Ponte Carlos) ou no Field (estrela Michelin); depois Black Angel's Bar."},
+  {d:"24",w:"Ter",t:"Manhã livre e volta a Munique",n:"",m:"Vyšehrad ou Casa Dançante (Glass Bar com vista) → almoço rápido no Naše maso.",a:"Estrada para Munique (~4h).",e:"Munique."}
+ ],
+ food:[
+  {n:"Lokál Dlouhááá",t:"Pub tcheco · cerveja de tanque",p:1,m:["almoço","jantar"],h:"Diário · até tarde",a:"Dlouhá · Cidade Velha",w:"Pilsner Urquell de tanque, sem pasteurizar, servida como manda a tradição. A comida tcheca de pub é honesta.",o:"Svíčková, guláš e tatarák."},
+  {n:"Kantýna",t:"Açougue-restaurante",p:2,m:["almoço","jantar"],h:"Diário",a:"Politických vězňů · Nové Město",w:"Antigo banco virou salão de carnes: você escolhe no balcão e eles preparam. Clientela local.",o:"Steak tartare, costela e chlebíček."},
+  {n:"Naše maso",t:"Açougue com balcão",p:1,m:["almoço"],h:"Seg–Sáb · dia",a:"Dlouhá · Cidade Velha",w:"Açougue artesanal com almoço em pé. O hambúrguer e a almôndega estão entre os melhores da cidade.",o:"Sekaná (bolo de carne) e Pilsner."},
+  {n:"U Kroka",t:"Tcheco tradicional",p:2,m:["almoço","jantar"],h:"Diário",a:"Vyšehrad",w:"Cozinha tcheca de vó, longe dos turistas.",o:"Pato assado com knedlíky e repolho roxo."},
+  {n:"Mlýnec",t:"Tcheco contemporâneo",p:4,m:["almoço","jantar"],h:"Diário",a:"Junto à Ponte Carlos",w:"Janela para a ponte iluminada e cozinha tcheca refinada. É o jantar especial de Praga.",o:"Svíčková moderna e carta de vinhos da Morávia."},
+  {n:"Field",t:"Alta cozinha · estrela Michelin",p:5,m:["almoço","jantar"],h:"Confirme os dias · reserve",a:"Cidade Velha",w:"Cozinha de ingredientes tchecos com uma estrela Michelin. Opção para um jantar de comemoração.",o:"Menu degustação."},
+  {n:"Café Louvre",t:"Café histórico · desde 1902",p:2,m:["almoço"],h:"Diário · dia todo",a:"Národní · Nové Město",w:"Café frequentado por Kafka e Einstein. Ótimo café da manhã e almoço tcheco.",o:"Café da manhã ou guláš."},
+  {n:"U Zlatého tygra",t:"Pub lendário",p:1,m:["jantar"],h:"Diário · a partir do fim da tarde",a:"Husova · Cidade Velha",w:"Pub de mesas cativas onde Václav Havel levou Bill Clinton. Chegue cedo e divida mesa.",o:"Pilsner e queijo hermelín marinado."}
+ ],
+ night:[
+  {n:"Hemingway Bar",t:"Bar de coquetéis",h:"Diário · noite",w:"Referência de coquetelaria em Praga, com ambiente de clube. Reservem."},
+  {n:"Black Angel's Bar",t:"Bar subterrâneo",h:"Diário · noite",w:"Porão gótico sob a Praça da Cidade Velha, com clima dos anos 1930."},
+  {n:"Anonymous Bar",t:"Bar temático",h:"Diário · noite",w:"Coquetéis teatrais com tema de máscaras de Guy Fawkes."},
+  {n:"Terasa U Prince",t:"Terraço sobre a Praça da Cidade Velha",h:"Confirme o horário de inverno",w:"Vista do Relógio Astronômico e da Igreja de Týn de cima."},
+  {n:"Glass Bar · Casa Dançante",t:"Bar no topo do prédio de Gehry",h:"Diário · confirme",w:"Vista do Moldava e do Castelo no prédio \"Ginger & Fred\"."}
+ ],
+ visit:[
+  {n:"Castelo de Praga & São Vito",p:1,d:"O maior complexo de castelo antigo do mundo. Reserve a manhã."},
+  {n:"Ponte Carlos",p:1,d:"Às 8h está vazia; à noite, iluminada."},
+  {n:"Praça da Cidade Velha & Relógio Astronômico",p:1,d:"O relógio funciona desde 1410 e se movimenta a cada hora."},
+  {n:"Malá Strana",p:1,d:"Bairro barroco aos pés do Castelo."},
+  {n:"Josefov · Bairro judeu",p:2,d:"Sinagogas e o cemitério antigo. Fecha aos sábados; na segunda, ok."},
+  {n:"Biblioteca de Strahov",p:2,d:"Salões barrocos e cervejaria do mosteiro ao lado."},
+  {n:"Vyšehrad",p:3,d:"Fortaleza com vista do rio, sem turistas."},
+  {n:"Casa Dançante",p:3,d:"Arquitetura de Frank Gehry com bar no topo."}
+ ]
+},
+{
+ id:"metzingen", name:"Outletcity Metzingen", country:"Alemanha", flag:"🛍️", color:"linear-gradient(135deg,#1c1c1c,#555)", bar:"#555",
+ dates:"25/11", nights:0, weather:"0–6 °C", sunset:"~16h45",
+ transport:"Carro: Munique → Metzingen ~2h30 pela A8 · volta para Munique",
+ lead:"Dia de compras na cidade-outlet de luxo onde a Hugo Boss nasceu. Na quarta, 25/11, o dia coincide com a abertura do mercado de Natal de Stuttgart, a 35 min de lá.",
+ alerts:[
+  {c:"green",t:"<b>Horário</b>: seg–sex 10h–20h e sáb 9h–20h; domingo fechado. Na quarta, 25/11, funciona das 10h às 20h."},
+  {c:"red",t:"<b>Tax free (não residentes na UE)</b>: peçam o formulário em cada loja mostrando o passaporte (há valor mínimo por nota). Na saída, carimbem na alfândega do aeroporto de Munique <b>antes</b> de despachar a mala. Sem carimbo não há reembolso."},
+  {c:"",t:"<b>Estratégia</b>: cheguem às 10h, comecem pelas marcas mais disputadas e voltem ao carro no meio do dia para deixar as sacolas."},
+  {c:"",t:"<b>Opcional</b>: o mercado de Natal de Stuttgart abre exatamente no dia 25/11 (cerimônia às 18h no Altes Schloss). Outra opção é o Museu da Mercedes-Benz ou da Porsche. Lembrem que a volta até Munique leva ~2h30."}
+ ],
+ days:[
+  {d:"25",w:"Qua",t:"Outletcity Metzingen",n:"Dia inteiro",m:"Saída de Munique às 7h30 (2h30 pela A8).",a:"Outlet das 10h até ~17h, com almoço no Marché, na praça do outlet.",e:"Opção A: Stuttgart, abertura do mercado de Natal às 18h, e volta a Munique (~2h20). Opção B: volta direta e último jantar em Munique."}
+ ],
+ food:[
+  {n:"Marché Metzingen",t:"Mercado-restaurante · dentro do outlet",p:2,m:["almoço","jantar"],h:"Seg–Sex 10h–21h · Sáb 9h–21h",a:"Hugo-Boss-Platz 6 · Outletcity",w:"Cozinha ao vivo, prático e sem sair do circuito de lojas.",o:"Prato do dia ou Maultaschen."},
+  {n:"Alte Kanzlei",t:"Suábio · Stuttgart",p:3,m:["jantar"],h:"Diário · confirme",a:"Schillerplatz · Stuttgart, no meio do mercado de Natal",w:"Casa histórica na praça do mercado. Bom para jantar antes de pegar a estrada.",o:"Maultaschen e Rostbraten com Spätzle."},
+  {n:"Cube",t:"Contemporâneo · cubo de vidro",p:4,m:["jantar"],h:"Confirme",a:"Topo do Kunstmuseum · Schlossplatz, Stuttgart",w:"Restaurante no cubo de vidro com vista para o Schlossplatz iluminado.",o:"Menu da estação."},
+  {n:"Weinstube Schellenturm",t:"Taverna de vinho suábia",p:2,m:["jantar"],h:"Confirme os dias",a:"Torre medieval · Stuttgart",w:"Taverna numa torre do século XVI, com vinho da região de Württemberg.",o:"Linsen mit Spätzle e vinho Trollinger."}
+ ],
+ night:[
+  {n:"Stuttgarter Weihnachtsmarkt",t:"Abertura em 25/11",h:"Estandes a partir das 17h · cerimônia às 18h",w:"Um dos mercados mais antigos e bonitos da Europa, com telhados decorados. Vejam a aba 🎄."}
+ ],
+ visit:[
+  {n:"Outletcity Metzingen",p:1,d:"Cerca de 100 lojas premium espalhadas pela cidade."},
+  {n:"Mercado de Natal de Stuttgart",p:2,d:"Abre justamente no dia 25/11. Fica a 35 min."},
+  {n:"Mercedes-Benz Museum",p:2,d:"130 anos de automóvel, a 40 min. Confirme o horário."},
+  {n:"Porsche Museum",p:3,d:"Em Zuffenhausen, a 45 min. Alternativa ao da Mercedes."}
+ ]
+}
+];
+
+/* ---------- MERCADOS DE NATAL ---------- */
+const MARKETS = {
+ roma:{note:"Ainda não é Natal em Roma: o mercado da Piazza Navona e o presépio da Praça São Pedro só são montados em dezembro. Os mercados desta viagem estão em Munique, Innsbruck e Stuttgart.",list:[]},
+ munique:{note:"Novidade de 2026: o Christkindlmarkt do Marienplatz começa mais cedo, em 20/11 (antes abria só na segunda antes do 1º Advento). Ele fecha no dia 22/11. Vocês pegam nas noites de 24 e 25/11.",
+ list:[
+  {n:"Münchner Christkindlmarkt",addr:"Marienplatz, 80331 München · também Kaufinger- e Neuhauser Straße",dates:"20/11 → 24/12/2026 (fechado em 22/11)",hours:"Seg–Sáb 10h–21h · Dom 10h–20h",fit:"Ter 24/11 à noite, na volta de Praga",what:"O mercado mais antigo de Munique, com 137 estandes e a árvore de ~25 m em frente à prefeitura neogótica. Há música de Advento na sacada da prefeitura.",eat:"Glühwein, Feuerzangenbowle, amêndoas caramelizadas e castanhas quentes."},
+  {n:"Kripperlmarkt",addr:"Rindermarkt · aos pés da igreja Alter Peter",dates:"Mesmo período do Christkindlmarkt",hours:"Mesmo horário",fit:"Junto com o Marienplatz",what:"O maior mercado de presépios da Alemanha, com figuras artesanais, cenários e peças entalhadas. Bom para um presente diferente.",eat:"—"},
+  {n:"Canto de Advento na Neuhauser Straße",addr:"Em frente à Michaelskirche · Neuhauser Straße",dates:"Quarta, 25/11/2026",hours:"16h30 (~30 min) · gratuito",fit:"Só se voltarem cedo de Metzingen",what:"Apresentação tradicional de canto natalino na rua de pedestres.",eat:"—"},
+  {n:"Outros mercados de Munique",addr:"Wittelsbacherplatz (medieval) · Residenz (Kaiserhof) · Theresienwiese (Tollwood)",dates:"Datas de 2026 a confirmar",hours:"Confirme",fit:"Noite de 25/11, se estiverem abertos",what:"O mercado medieval, com tochas, ferreiros e hidromel, é o mais diferente da cidade. Confirmem se já abriu na semana de vocês.",eat:"Met (hidromel) quente e pão no espeto."}
+ ]},
+ austria:{note:"O Tirol já está em clima de Natal: os mercados de Innsbruck abrem em meados de novembro. Se forem a Innsbruck no sábado, 21/11, encaixem os três abaixo num passeio a pé.",
+ list:[
+  {n:"Christkindlmarkt Altstadt",addr:"Herzog-Friedrich-Straße · em frente ao Goldenes Dachl, 6020 Innsbruck",dates:"Meados de nov → 23/12/2026",hours:"Diário · 11h–21h",fit:"Sáb 21/11 (opção Innsbruck)",what:"O mais antigo e tradicional de Innsbruck: estandes encostados nas casas medievais, sob a árvore gigante, em frente ao Telhado Dourado.",eat:"Kiachl (massa frita com geleia de oxicoco ou chucrute), Glühwein e Speckknödel."},
+  {n:"Christkindlmarkt Marktplatz",addr:"Marktplatz · Innrain 4, 6020 Innsbruck",dates:"13/11 → 19/12/2026",hours:"Diário · 11h–21h",fit:"A 3 min da Altstadt, à beira do rio Inn",what:"Mercado na beira do rio, de frente para as casas coloridas da margem oposta e a Nordkette nevada.",eat:"Tiroler Gröstl e ponche."},
+  {n:"Christkindlmarkt St. Nikolaus",addr:"Hans-Brenner-Platz, 6020 Innsbruck",dates:"20/11 → 23/12/2026",hours:"Diário · 16h–21h",fit:"Fim de tarde de sábado",what:"O mais tranquilo e de bairro, com música ao vivo todos os dias.",eat:"Glühwein caseiro."}
+ ]},
+ praga:{note:"Atenção: os grandes mercados da Praça da Cidade Velha e da Praça Venceslau só abrem em 28/11/2026, depois que vocês saem. Vocês verão a montagem e a árvore chegando. Os de bairro já estarão funcionando.",
+ list:[
+  {n:"Mercado de Natal da Náměstí Míru",addr:"Náměstí Míru · Vinohrady, Praha 2 (metrô A)",dates:"A partir de ~20/11/2026 (confirme)",hours:"Diário · ~10h–18h",fit:"Seg 23/11 no fim da tarde",what:"Mercado de bairro em frente à igreja neogótica de Santa Ludmila, frequentado por quem mora em Praga.",eat:"Svařák (vinho quente tcheco), klobása grelhada e trdelník."},
+  {n:"Havelské tržiště",addr:"Havelská · entre a Cidade Velha e a Praça Venceslau",dates:"Ano todo · decoração de Natal no fim de novembro",hours:"Diário · dia",fit:"No caminho do dia 23",what:"Mercado permanente do centro, com bancas de artesanato, marionetes e frutas.",eat:"—"},
+  {n:"Praça da Cidade Velha (em montagem)",addr:"Staroměstské náměstí, Praha 1",dates:"Abre em 28/11/2026",hours:"Depois da abertura: 10h–22h",fit:"Vocês verão a montagem",what:"O mercado mais famoso da República Tcheca, com árvore de ~26 m em frente à Igreja de Týn. Fica de registro para uma próxima viagem.",eat:"—"}
+ ]},
+ metzingen:{note:"O dia 25/11 é exatamente a abertura do mercado de Natal de Stuttgart, um dos maiores e mais antigos da Europa, a 35 min do outlet. Se a energia permitir, é o fechamento perfeito antes da estrada para Munique.",
+ list:[
+  {n:"Stuttgarter Weihnachtsmarkt",addr:"Schlossplatz, Marktplatz, Schillerplatz e Karlsplatz · Stuttgart",dates:"25/11 → 23/12/2026",hours:"Abertura em 25/11: estandes a partir das 17h, cerimônia às 18h no pátio do Altes Schloss · depois: Dom–Qui 11h–21h, Sex–Sáb 11h–22h",fit:"Qua 25/11, saindo do outlet às ~17h",what:"Cerca de 300 estandes com telhados decorados à mão (concurso entre os comerciantes) e registro desde 1692.",eat:"Glühwein na caneca do ano, Maultaschen e Schupfnudeln com chucrute."},
+  {n:"Mercado medieval de Esslingen",addr:"Altstadt de Esslingen am Neckar (entre Metzingen e Stuttgart)",dates:"Fim de nov → 22/12 (confirme 2026)",hours:"Confirme",fit:"Alternativa a Stuttgart, mais perto do caminho",what:"Mercado medieval com artesãos fantasiados, fogueiras e espetáculos numa cidade de casas em enxaimel.",eat:"Hidromel quente e pão no forno a lenha."}
+ ]}
+};
+
+/* ---------- NÃO PODE FALTAR ---------- */
+const MUSTS = {
+ roma:[
+  {c:"Comer",n:"As 4 massas romanas",d:"Carbonara (ovo, guanciale e pecorino; nunca creme), cacio e pepe, amatriciana e gricia. Em duas noites, dividam para provar todas."},
+  {c:"Comer",n:"Carciofi alla giudia",d:"Alcachofra frita inteira, crocante como uma flor. Vem da cozinha do Gueto Judaico e novembro abre a estação."},
+  {c:"Comer",n:"Supplì",d:"Bolinho de arroz com molho e mussarela. O apelido \"al telefono\" vem do fio de queijo que estica ao morder."},
+  {c:"Comer",n:"Maritozzo con la panna",d:"Brioche recheado de chantilly, o café da manhã de padaria romana."},
+  {c:"Beber",n:"Café no balcão",d:"Em pé custa menos do que sentado à mesa. Cappuccino só de manhã: depois do almoço, romano pede espresso."},
+  {c:"Fazer",n:"Moeda na Fontana di Trevi",d:"De costas, com a mão direita jogando por cima do ombro esquerdo, para garantir a volta a Roma. As moedas são doadas à Caritas."},
+  {c:"Curiosidade",n:"Os \"nasoni\"",d:"Bebedouros de ferro com água potável gelada e grátis pela cidade. Tape o bico com o dedo e a água sai pelo furinho de cima."},
+  {c:"Curiosidade",n:"O buraco da fechadura do Aventino",d:"Pela fechadura da Ordem de Malta, a cúpula de São Pedro aparece emoldurada no fim de um corredor de árvores."}
+ ],
+ munique:[
+  {c:"Comer",n:"Weißwurst antes do meio-dia",d:"Pela tradição, a salsicha branca \"não pode ouvir o sino do meio-dia\". Tira-se a pele (não se come) e acompanha Brezn, mostarda doce e Weißbier."},
+  {c:"Comer",n:"Obatzda",d:"Pasta de queijo camembert com manteiga, páprica e cebola. É o petisco de cervejaria."},
+  {c:"Comer",n:"Leberkäs-Semmel",d:"Fatia grossa de \"bolo de carne\" bávaro no pão. Não tem fígado nem queijo, apesar do nome. É o lanche de rua da cidade."},
+  {c:"Beber",n:"Uma Maß no Hofbräuhaus",d:"Caneca de 1 litro. Ao brindar (\"Prost!\"), olhe nos olhos de cada um; pela superstição, quem não olha tem sete anos de azar."},
+  {c:"Beber",n:"As 6 cervejarias de Munique",d:"Só Augustiner, Hacker-Pschorr, Hofbräu, Löwenbräu, Paulaner e Spaten podem servir na Oktoberfest. Façam a rodada."},
+  {c:"Curiosidade",n:"A Lei da Pureza nasceu aqui",d:"A Reinheitsgebot de 1516, da Baviera, limitava a cerveja a água, cevada e lúpulo. É uma das leis alimentares mais antigas do mundo."},
+  {c:"Curiosidade",n:"O Glockenspiel conta duas histórias",d:"As figuras encenam um casamento real de 1568 e a dança dos tanoeiros, que comemora o fim da peste."},
+  {c:"Fazer",n:"Surfistas no Eisbach",d:"Uma onda permanente num riacho do Englischer Garten, surfada até em novembro, de roupa de neoprene."}
+ ],
+ austria:[
+  {c:"Comer",n:"Kaiserschmarrn",d:"Panqueca grossa rasgada, caramelizada, com açúcar e compota de ameixa. A lenda diz que o nome vem do imperador Francisco José."},
+  {c:"Comer",n:"Tiroler Gröstl & Speckknödel",d:"Batata salteada com carne e ovo frito, e bolinhos de pão com Speck (presunto defumado tirolês). É comida de montanha."},
+  {c:"Comer",n:"Kiachl de Innsbruck",d:"Massa frita servida doce, com geleia de oxicoco, ou salgada, com chucrute. É a tradição dos mercados de Innsbruck."},
+  {c:"Beber",n:"Zirbenschnaps",d:"Aguardente de pinhas do pinheiro-cembra dos Alpes. É o digestivo tirolês."},
+  {c:"Beber",n:"Almdudler",d:"O refrigerante nacional austríaco, de ervas alpinas. Misturado com vinho branco vira o \"Almdudler Gspritzt\"."},
+  {c:"Curiosidade",n:"Ötzi foi achado no Ötztal",d:"O \"homem do gelo\", múmia de cerca de 5.300 anos, foi encontrado em 1991 no glaciar no fim deste mesmo vale."},
+  {c:"Curiosidade",n:"Sauna sem roupa é regra",d:"Nas saunas da Áustria e da Alemanha, entrar de sunga é que pega mal. Usem a toalha embaixo do corpo no banco."},
+  {c:"Fazer",n:"Cenário de James Bond",d:"O ice Q e o 007 Elements, no topo do Gaislachkogl, foram locação de Spectre (2015)."}
+ ],
+ praga:[
+  {c:"Beber",n:"Pilsner de tanque",d:"\"Tankové pivo\" vem de tanques sem pasteurização. A Pilsner, a primeira cerveja tipo pilsen do mundo, nasceu em 1842 em Plzeň, no caminho de vocês."},
+  {c:"Beber",n:"Becherovka",d:"Licor de ervas de Karlovy Vary, com receita secreta desde 1807. Peça como digestivo."},
+  {c:"Comer",n:"Svíčková",d:"Lombo bovino com molho cremoso de legumes, chantilly e oxicoco, com knedlíky. É o prato nacional."},
+  {c:"Comer",n:"Nakládaný hermelín",d:"Queijo tipo camembert marinado em óleo, pimenta e cebola. É o petisco obrigatório de pub."},
+  {c:"Curiosidade",n:"Trdelník não é tcheco",d:"O doce em forma de tubo vendido em todo canto é invenção recente para turista. Os locais riem de quem acha que é tradição."},
+  {c:"Curiosidade",n:"Brinde olho no olho",d:"\"Na zdraví!\" Olhe nos olhos e não cruze os braços com os outros ao brindar. Bata o copo na mesa antes de beber."},
+  {c:"Curiosidade",n:"O relógio de 1410",d:"O Orloj é um dos relógios astronômicos mais antigos do mundo ainda funcionando. De hora em hora, os apóstolos desfilam nas janelas."},
+  {c:"Fazer",n:"Cerveja do mosteiro de Strahov",d:"Cervejaria dentro de um mosteiro do século XII, ao lado da biblioteca barroca."}
+ ],
+ metzingen:[
+  {c:"Comer",n:"Maultaschen",d:"Pastéis grandes de massa recheados de carne e espinafre. O apelido suábio é \"Herrgottsbscheißerle\" (enganadores de Deus): escondiam carne na Quaresma."},
+  {c:"Comer",n:"Spätzle",d:"Massinha de ovo raspada na hora, a base de toda refeição suábia."},
+  {c:"Curiosidade",n:"Hugo Boss nasceu em Metzingen",d:"Hugo Ferdinand Boss fundou a empresa aqui em 1924. O outlet começou com a loja de fábrica da marca."},
+  {c:"Curiosidade",n:"Terra do automóvel",d:"Stuttgart é a cidade da Mercedes-Benz e da Porsche: o automóvel moderno nasceu nesta região."},
+  {c:"Fazer",n:"Tax free organizado",d:"Uma pasta para todos os formulários. Na alfândega do aeroporto eles podem pedir para ver os produtos, então não despachem antes do carimbo."}
+ ]
+};
+
+const CHECKLIST = [
+ {id:"vaticano",t:"Museus Vaticanos · Ter 17/11",s:"Site oficial museivaticani.va, horário da tarde"},
+ {id:"coliseu",t:"Coliseu · Ter 17/11, 9h",s:"Ingresso combinado com Fórum e Palatino"},
+ {id:"pantheon",t:"Pantheon · €7",s:"Só no site oficial"},
+ {id:"jantaresroma",t:"Reservas em Roma",s:"Roscioli, Armando, Pierluigi ou Checchino"},
+ {id:"carro",t:"Locadora: pneus e República Tcheca",s:"Confirmar pneus de inverno e autorização para cruzar a fronteira"},
+ {id:"vinhetaat",t:"Vinheta da Áustria",s:"Comprar em posto ou revendedor com validade imediata"},
+ {id:"vinhetacz",t:"Vinheta tcheca (edalnice.cz)",s:"Antes de cruzar a fronteira, dia 22/11"},
+ {id:"neusch",t:"Neuschwanstein · Sex 20/11",s:"Opcional, ingresso com horário"},
+ {id:"spa",t:"Massagem no AQUA DOME",s:"Reservar o horário no spa"},
+ {id:"iceq",t:"ice Q · Sáb 21/11",s:"Confirmar abertura do inverno e reservar mesa"},
+ {id:"praga",t:"Jantar em Praga",s:"Mlýnec ou Field e mesa no Hemingway Bar"},
+ {id:"taxfree",t:"Tax free",s:"Passaporte em mãos no outlet e tempo extra no aeroporto dia 26"}
+];
+
+/* ---------- storage ---------- */
+const store = {
+  get(k,def){try{const v=localStorage.getItem(k);return v?JSON.parse(v):def}catch(e){return def}},
+  set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}
+};
+let favs = store.get("eu26s_favs",{});
+let done = store.get("eu26s_done",{});
+
+/* ---------- helpers ---------- */
+const esc = s => String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const maps = (n,c) => "https://www.google.com/maps/search/?api=1&query="+encodeURIComponent(n+" "+c);
+const fork = (n,c) => "https://www.google.com/search?q="+encodeURIComponent("TheFork "+n+" "+c);
+const priceHTML = p => `<span class="price">${"€".repeat(p)}<span class="off">${"€".repeat(5-p)}</span></span> <span style="font-size:12px;color:var(--muted)">${PRICE[p]} p/ pessoa</span>`;
+
+/* ---------- nav ---------- */
+const nav = document.getElementById("routeNav");
+nav.innerHTML = `<button class="rbtn" data-go="overview"><span class="fl">🗺️</span><span><b>Visão geral</b></span></button>` +
+ CITIES.map(c=>`<button class="rbtn" data-go="${c.id}"><span class="fl">${c.flag}</span><span><b>${c.name}</b> <small>${c.dates.replace(" → ","–")}</small></span></button>`).join("");
+nav.addEventListener("click",e=>{const b=e.target.closest("[data-go]");if(b) location.hash=b.dataset.go;});
+
+/* ---------- overview ---------- */
+function renderOverview(){
+  const el=document.getElementById("overview");
+  el.innerHTML = `
+  <div class="legend"><span>Escala de preço (por pessoa, sem vinho):</span>
+   ${[1,2,3,4,5].map(p=>`<span><span class="pill">${"€".repeat(p)}</span> ${PRICE[p]}</span>`).join("")}</div>
+  <div class="timeline">
+   ${CITIES.map(c=>`<div class="tcard" data-go="${c.id}"><div class="bar" style="background:${c.bar}"></div>
+     <div class="d">${c.flag} ${c.dates} · ${c.nights?c.nights+" noites":"bate-volta"}</div>
+     <h3>${c.name}</h3>
+     <div class="row">${c.food.length?`<span class="tag">${c.food.length} restaurantes</span>`:""}<span class="tag blue">${c.weather}</span></div>
+     <div class="tr">${esc(c.transport)}</div></div>`).join("")}
+  </div>
+  <div class="panel">
+   <h2>Reservar antes de embarcar</h2>
+   <p class="hint">Marque conforme for comprando. Fica salvo neste navegador.</p>
+   <div class="checklist">${CHECKLIST.map(i=>`<label class="chk ${done[i.id]?"done":""}"><input type="checkbox" data-chk="${i.id}" ${done[i.id]?"checked":""}><div><div class="t">${esc(i.t)}</div><div class="s">${esc(i.s)}</div></div></label>`).join("")}</div>
+  </div>
+  <div class="panel">
+   <h2>O que pesa na viagem toda</h2>
+   <p class="hint">Novembro, carro e quatro países</p>
+   <div class="alerts" style="margin:0">
+    <div class="alert red">🚗 <b>Vinhetas</b>: Alemanha não cobra pedágio de carro. A Áustria exige vinheta digital (comprem em posto ou revendedor; online na ASFINAG só vale depois de 18 dias). A República Tcheca exige e-vinheta em edalnice.cz. A fiscalização é por câmera nos dois países.</div>
+    <div class="alert">❄️ <b>Pneus de inverno e fronteira</b>: na retirada do carro, confirmem pneus de inverno e autorização para entrar na República Tcheca.</div>
+    <div class="alert">🛣️ <b>Trechos longos</b>: Längenfeld → Praga ~6h (dia 22), Praga → Munique ~4h (dia 24) e Munique ↔ Metzingen ~2h30 cada perna (dia 25). Revezem o volante.</div>
+    <div class="alert green">🎄 <b>Mercados de Natal</b>: Innsbruck já está aberto (21/11), Munique abre em 20/11 (vocês pegam em 24 e 25) e Stuttgart abre em 25/11. Praga só em 28/11 e Roma só em dezembro.</div>
+    <div class="alert">🌅 <b>Dias curtos</b>: escurece entre ~16h10 (Praga) e ~16h50 (Roma). Façam a estrada e as montanhas com luz do dia.</div>
+    <div class="alert">🧾 <b>Tax free</b>: carimbo na alfândega do aeroporto de Munique antes do check-in, no dia 26.</div>
+   </div>
+  </div>`;
+  el.querySelectorAll("[data-go]").forEach(t=>t.addEventListener("click",()=>location.hash=t.dataset.go));
+  el.querySelectorAll("[data-chk]").forEach(cb=>cb.addEventListener("change",()=>{done[cb.dataset.chk]=cb.checked;store.set("eu26s_done",done);cb.closest(".chk").classList.toggle("done",cb.checked);}));
+}
+
+/* ---------- city ---------- */
+const state = {}; // per city: tab, meal, price, fav
+function renderCity(c){
+  const s = state[c.id] || (state[c.id]={tab:"roteiro",meal:"todos",price:0,fav:false});
+  let el=document.getElementById("c-"+c.id);
+  if(!el){el=document.createElement("section");el.id="c-"+c.id;el.className="city";document.getElementById("cities").appendChild(el);}
+  const tabs=[["roteiro","🗓️ Roteiro"],["natal","🎄 Mercados de Natal"],["comer","🍽️ Restaurantes"],["noite","🌃 Rooftops & noite"],["visitar","📍 O que visitar"],["imperdivel","⭐ Não pode faltar"]];
+  el.innerHTML = `
+   <div class="hero" style="background:${c.color}">
+     <div class="eyebrow" style="color:rgba(255,255,255,.75)">${c.flag} ${c.country}</div>
+     <h2>${c.name}</h2>
+     <div class="lead">${esc(c.lead)}</div>
+     <div class="meta"><span class="chip">📅 ${c.dates}</span><span class="chip">🌙 ${c.nights?c.nights+" noites":"bate-volta"}</span><span class="chip">🌡️ ${c.weather}</span><span class="chip">🌅 pôr do sol ${c.sunset}</span><span class="chip">🚆 ${esc(c.transport)}</span></div>
+   </div>
+   <div class="alerts">${c.alerts.map(a=>`<div class="alert ${a.c}">${a.t}</div>`).join("")}</div>
+   <div class="subtabs">${tabs.map(([k,l])=>`<button class="st ${s.tab===k?"on":""}" data-tab="${k}">${l}</button>`).join("")}</div>
+   <div class="pane ${s.tab==="roteiro"?"on":""}" data-pane="roteiro">${daysHTML(c)}</div>
+   <div class="pane ${s.tab==="comer"?"on":""}" data-pane="comer">${foodHTML(c,s)}</div>
+   <div class="pane ${s.tab==="noite"?"on":""}" data-pane="noite">${nightHTML(c)}</div>
+   <div class="pane ${s.tab==="visitar"?"on":""}" data-pane="visitar">${visitHTML(c)}</div>
+   <div class="pane ${s.tab==="natal"?"on":""}" data-pane="natal">${marketsHTML(c)}</div>
+   <div class="pane ${s.tab==="imperdivel"?"on":""}" data-pane="imperdivel">${mustsHTML(c)}</div>`;
+  el.querySelectorAll("[data-tab]").forEach(b=>b.addEventListener("click",()=>{s.tab=b.dataset.tab;renderCity(c);}));
+  el.querySelectorAll("[data-meal]").forEach(b=>b.addEventListener("click",()=>{s.meal=b.dataset.meal;renderCity(c);}));
+  el.querySelectorAll("[data-price]").forEach(b=>b.addEventListener("click",()=>{const v=+b.dataset.price;s.price=s.price===v?0:v;renderCity(c);}));
+  el.querySelectorAll("[data-favonly]").forEach(b=>b.addEventListener("click",()=>{s.fav=!s.fav;renderCity(c);}));
+  el.querySelectorAll("[data-fav]").forEach(b=>b.addEventListener("click",()=>{const k=b.dataset.fav;favs[k]=!favs[k];store.set("eu26s_favs",favs);renderCity(c);}));
+  return el;
+}
+function daysHTML(c){
+  return `<div class="days">${c.days.map(d=>`<div class="day">
+   <div class="dayh"><div class="date"><div class="n">${d.d}</div><div class="w">${d.w}</div></div><div><h4>${esc(d.t)}</h4>${d.n?`<div class="note">${esc(d.n)}</div>`:""}</div></div>
+   <div class="slots">
+    <div class="slot"><div class="lbl">Manhã</div><p>${esc(d.m)}</p></div>
+    <div class="slot"><div class="lbl">Tarde</div><p>${esc(d.a)}</p></div>
+    <div class="slot"><div class="lbl">Noite</div><p>${esc(d.e)}</p></div>
+   </div></div>`).join("")}</div>`;
+}
+function foodHTML(c,s){
+  let list=c.food.filter(f=>(s.meal==="todos"||f.m.includes(s.meal))&&(!s.price||f.p===s.price)&&(!s.fav||favs[c.id+"|"+f.n]));
+  return `<div class="filters">
+    ${["todos","almoço","jantar"].map(m=>`<button class="fbtn ${s.meal===m?"on":""}" data-meal="${m}">${m[0].toUpperCase()+m.slice(1)}</button>`).join("")}
+    <span class="sep"></span>
+    ${[1,2,3,4,5].map(p=>`<button class="fbtn ${s.price===p?"on":""}" data-price="${p}" title="${PRICE[p]}">${"€".repeat(p)}</button>`).join("")}
+    <span class="sep"></span>
+    <button class="fbtn ${s.fav?"on":""}" data-favonly>♥ Favoritos</button>
+  </div>
+  <div class="grid">${list.length?list.map(f=>{const k=c.id+"|"+f.n;return `<div class="card">
+    <button class="fav ${favs[k]?"on":""}" data-fav="${esc(k)}" title="Favoritar">♥</button>
+    <h5>${esc(f.n)}</h5>
+    <div class="type">${esc(f.t)} · <span style="color:var(--muted)">${esc(f.a)}</span></div>
+    <div class="row">${priceHTML(f.p)}</div>
+    <div class="row">${f.m.map(m=>`<span class="tag ${m==="jantar"?"blue":"green"}">${m}</span>`).join("")}</div>
+    <div class="hours">🕐 ${esc(f.h)}</div>
+    <p class="why">${esc(f.w)}</p>
+    <p class="order"><b>Peça:</b> ${esc(f.o)}</p>
+    <div class="links"><a class="lk" href="${fork(f.n,c.name)}" target="_blank" rel="noopener">TheFork ↗</a><a class="lk" href="${maps(f.n,c.name)}" target="_blank" rel="noopener">Maps ↗</a></div>
+  </div>`}).join(""):`<div class="empty">Nenhum restaurante com esse filtro.</div>`}</div>`;
+}
+function nightHTML(c){
+  return `<div class="vis">${c.night.map(n=>`<div class="vcard">
+   <div class="prio p2">${esc(n.t)}</div><h5>${esc(n.n)}</h5><p>${esc(n.w)}</p>
+   <div class="hours" style="margin-top:4px">🕐 ${esc(n.h)}</div>
+   <div class="links"><a class="lk" href="${maps(n.n,c.name)}" target="_blank" rel="noopener">Maps ↗</a></div></div>`).join("")}</div>`;
+}
+function visitHTML(c){
+  const L={1:"Imperdível",2:"Vale muito",3:"Se der tempo"};
+  return `<div class="vis">${c.visit.map(v=>`<div class="vcard">
+   <div class="prio p${v.p}">${L[v.p]}</div><h5>${esc(v.n)}</h5><p>${esc(v.d)}</p>
+   <div class="links"><a class="lk" href="${maps(v.n,c.name)}" target="_blank" rel="noopener">Maps ↗</a></div></div>`).join("")}</div>`;
+}
+
+function marketsHTML(c){
+  const M=MARKETS[c.id]; if(!M) return "";
+  return `<div class="xmas-note">🎄 ${esc(M.note)}</div>
+  <div class="mk-list">${M.list.map((m,i)=>`<div class="mk">
+    <div class="mk-num">${i+1}</div>
+    <div class="mk-body">
+      <h5>${esc(m.n)}</h5>
+      <div class="mk-meta"><span>📍 ${esc(m.addr)}</span><span>📅 ${esc(m.dates)}</span><span>🕐 ${esc(m.hours)}</span></div>
+      <div class="mk-fit">🗓️ <b>No roteiro de vocês:</b> ${esc(m.fit)}</div>
+      <div class="mk-cols">
+        <div><div class="lbl">O que fazer</div><p>${esc(m.what)}</p></div>
+        <div><div class="lbl">O que provar</div><p>${esc(m.eat)}</p></div>
+      </div>
+      <div class="links"><a class="lk" href="${maps(m.addr.split("·")[0],"")}" target="_blank" rel="noopener">Abrir no Maps ↗</a></div>
+    </div></div>`).join("")}</div>`;
+}
+function mustsHTML(c){
+  const L=MUSTS[c.id]||[]; const ic={"Comer":"🍴","Beber":"🍷","Fazer":"✨","Curiosidade":"💡"};
+  const cats=["Comer","Beber","Fazer","Curiosidade"].filter(k=>L.some(x=>x.c===k));
+  return cats.map(k=>`<div class="must-group"><h3 class="must-h">${ic[k]} ${k==="Curiosidade"?"Curiosidades":k}</h3>
+   <div class="vis">${L.filter(x=>x.c===k).map(x=>`<div class="vcard must ${k.toLowerCase()}"><h5>${esc(x.n)}</h5><p>${esc(x.d)}</p></div>`).join("")}</div></div>`).join("");
+}
+
+/* ---------- routing ---------- */
+function route(){
+  const id=(location.hash||"#overview").slice(1);
+  const valid=id==="overview"||CITIES.some(c=>c.id===id);
+  const cur=valid?id:"overview";
+  document.querySelectorAll(".city").forEach(x=>x.classList.remove("on"));
+  if(cur==="overview"){renderOverview();document.getElementById("overview").classList.add("on");}
+  else{renderCity(CITIES.find(c=>c.id===cur)).classList.add("on");}
+  nav.querySelectorAll(".rbtn").forEach(b=>b.classList.toggle("on",b.dataset.go===cur));
+  const act=nav.querySelector(".rbtn.on"); if(act) act.scrollIntoView({inline:"center",block:"nearest",behavior:"smooth"});
+  window.scrollTo({top:0,behavior:"smooth"});
+}
+window.addEventListener("hashchange",route);
+
+/* countdown */
+(function(){const t=new Date("2026-11-15T00:00:00-03:00"),n=new Date();const d=Math.ceil((t-n)/864e5);
+ document.getElementById("countdown").textContent=d>0?d+" dias":(d>-12?"Em viagem ✈️":"Concluída");})();
+
+route();
+</script>
+</body>
+</html>
