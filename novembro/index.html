@@ -193,17 +193,17 @@ const CITIES = [
  id:"roma", name:"Roma", country:"Itália", flag:"🇮🇹", color:"linear-gradient(135deg,#3a1414,#8f2a2a)", bar:"#8f2a2a",
  dates:"16/11 → 18/11", nights:2, weather:"10–17 °C", sunset:"~16h50",
  transport:"Chegada de São Paulo · Saída: voo para Munique (18/11)",
- lead:"Duas noites, então é Roma concentrada: Coliseu, Vaticano, centro histórico e as melhores mesas romanas. Novembro é baixa temporada, com filas menores, clima ameno e o começo da estação da alcachofra romana.",
+ lead:"Duas noites, com a reunião com o Alessandro na terça. Por isso o turismo pesado fica na segunda, logo na chegada, e a terça encaixa o Vaticano no horário livre. Novembro é baixa temporada, com filas menores, clima ameno e o começo da estação da alcachofra romana.",
  alerts:[
-  {c:"red",t:"<b>Museus Vaticanos</b>: reservem já no site oficial (museivaticani.va) para terça, 17/11. A Galleria Borghese fecha às segundas, então só daria na terça."},
-  {c:"",t:"<b>Coliseu</b>: comprem para 17/11 às 9h. <b>Pantheon</b>: €7 com horário marcado, só no site oficial."},
+  {c:"red",t:"<b>Museus Vaticanos</b>: reservem no site oficial (museivaticani.va) para terça, 17/11, no período livre da reunião com o Alessandro: de manhã se a reunião for à tarde, ou o contrário. Abrem às segundas, então segunda à tarde também serve."},
+  {c:"",t:"<b>Coliseu</b>: comprem para segunda, 16/11, no primeiro horário que der depois da chegada. <b>Pantheon</b>: €7 com horário marcado, só no site oficial."},
   {c:"green",t:"<b>Quarta, 18/11 de manhã</b>: o Papa faz a Audiência Geral na Praça São Pedro às quartas. É gratuita, mas o ingresso precisa ser pedido com antecedência. Só vale se o voo para Munique for à tarde."},
   {c:"",t:"<b>Sem carro em Roma</b>: andem a pé, de táxi ou de app (FreeNow). O carro só começa em Munique."}
  ],
  days:[
-  {d:"16",w:"Seg",t:"Chegada · centro histórico a pé",n:"Dia leve depois do voo noturno",m:"Check-in, banho e cappuccino com cornetto no balcão.",a:"Pantheon → Piazza Navona → Campo de' Fiori → Fontana di Trevi → Escadaria da Espanha. Tudo a pé, uns 3 km.",e:"Aperitivo no Freni e Frizioni (Trastevere), jantar no Roscioli e drink no Jerry Thomas."},
-  {d:"17",w:"Ter",t:"Coliseu · Fórum · Vaticano",n:"O dia grande de Roma",m:"Coliseu às 9h → Fórum Romano → Palatino (cerca de 3h30).",a:"Almoço no Armando al Pantheon (reserve) ou supplì no Supplizio → Museus Vaticanos e Capela Sistina (horário reservado) → Basílica de São Pedro.",e:"Jantar no Pierluigi (frutos do mar, clientela de executivos romanos) ou no Checchino; drink no Stravinskij Bar do Hotel de Russie."},
-  {d:"18",w:"Qua",t:"Manhã livre e voo para Munique",n:"",m:"Audiência Geral do Papa (~9h) ou Aventino: o buraco da fechadura e o Giardino degli Aranci.",a:"Voo para Munique.",e:"Chegada em Munique (veja a aba Munique)."}
+  {d:"16",w:"Seg",t:"Chegada · Coliseu e centro histórico",n:"O dia de turismo em Roma",m:"Chegada, check-in e cappuccino com cornetto no balcão.",a:"Coliseu → Fórum Romano → Palatino (cerca de 3h) → a pé até o Pantheon e a Piazza Navona.",e:"Fontana di Trevi e Escadaria da Espanha iluminadas, jantar no Roscioli e drink no Jerry Thomas."},
+  {d:"17",w:"Ter",t:"Reunião com o Alessandro · Vaticano",n:"Encaixem o Vaticano no período livre",m:"Reunião com o Alessandro ou Museus Vaticanos e Capela Sistina (cerca de 3h, horário reservado).",a:"O que sobrou da manhã → Basílica de São Pedro. Almoço no Armando al Pantheon ou supplì no Supplizio.",e:"Jantar no Pierluigi (frutos do mar, clientela de executivos romanos) ou no Checchino; drink no Stravinskij Bar do Hotel de Russie."},
+  {d:"18",w:"Qua",t:"Manhã livre e voo para Munique",n:"",m:"Audiência Geral do Papa (~9h, se o voo for à tarde) ou Aventino: o buraco da fechadura e o Giardino degli Aranci.",a:"Voo para Munique.",e:"Chegada em Munique (veja a aba Munique)."}
  ],
  food:[
   {n:"Armando al Pantheon",t:"Romano clássico · desde 1961",p:3,m:["almoço","jantar"],h:"Seg–Sex almoço e jantar · Sáb almoço · fecha dom",a:"A 50 m do Pantheon",w:"Família no comando há três gerações. Ao lado do monumento mais turístico, mas cheio de romanos. Reserve com antecedência.",o:"Cacio e pepe, abbacchio e torta della nonna."},
@@ -211,7 +211,7 @@ const CITIES = [
   {n:"Pierluigi",t:"Frutos do mar · clássico romano",p:4,m:["almoço","jantar"],h:"Diário · almoço e jantar (confirme)",a:"Piazza de' Ricci · perto de Campo de' Fiori",w:"Casa tradicional frequentada por políticos, empresários e a sociedade romana. Peixe cru e grelhados de primeira, com mesas na praça.",o:"Crudo di mare e linguine all'astice."},
   {n:"Da Cesare al Casaletto",t:"Trattoria romana",p:2,m:["almoço","jantar"],h:"Fecha às quartas · confirme",a:"Monteverde · bonde 8",w:"Para muitos chefs romanos, a melhor trattoria da cidade. Fica longe do centro e só tem locais.",o:"Fritti (polpette di bollito), gricia e coda alla vaccinara."},
   {n:"Piperno",t:"Romano-judaico · desde 1860",p:3,m:["almoço","jantar"],h:"Ter–Sáb almoço e jantar · Dom almoço · fecha seg",a:"Gueto Judaico",w:"A casa histórica dos carciofi alla giudia, no Gueto, e novembro já é temporada.",o:"Carciofi alla giudia, fritto misto e filetti di baccalà."},
-  {n:"Checchino dal 1887",t:"Quinto quarto (miúdos romanos)",p:4,m:["almoço","jantar"],h:"Ter–Sáb · fecha dom à noite e seg",a:"Testaccio",w:"Onde nasceu a cozinha do matadouro romano, com uma das adegas mais antigas da cidade. Encaixa na terça, 17/11.",o:"Rigatoni con la pajata e coda alla vaccinara."},
+  {n:"Checchino dal 1887",t:"Quinto quarto (miúdos romanos)",p:4,m:["almoço","jantar"],h:"Ter–Sáb · fecha dom à noite e seg",a:"Testaccio",w:"Onde nasceu a cozinha do matadouro romano, com uma das adegas mais antigas da cidade. Encaixa na terça, 17/11, depois da reunião.",o:"Rigatoni con la pajata e coda alla vaccinara."},
   {n:"Pizzeria Da Remo",t:"Pizza romana",p:1,m:["jantar"],h:"Seg–Sáb · ~19h–1h",a:"Testaccio",w:"Pizza fina e crocante e fila de romanos. Não aceita reserva: chegue às 19h.",o:"Pizza capricciosa e supplì."},
   {n:"Supplizio",t:"Supplì artesanal · street food",p:1,m:["almoço"],h:"Seg–Sáb · confirme",a:"Via dei Banchi Vecchi",w:"Lanche rápido entre um passeio e outro, de um chef romano dedicado só ao supplì.",o:"Supplì classico e de cacio e pepe."}
  ],
@@ -223,34 +223,35 @@ const CITIES = [
   {n:"Terrazza Les Etoiles",t:"Rooftop · Prati",h:"Bar diário ~17h30–24h · área interna aquecida",w:"A cúpula de São Pedro bem de frente. Aberto o ano todo."}
  ],
  visit:[
-  {n:"Coliseu · Fórum · Palatino",p:1,d:"Ingresso combinado para 17/11 às 9h. Reserve 3h30."},
-  {n:"Museus Vaticanos & Capela Sistina",p:1,d:"Reserve horário para 17/11 à tarde no site oficial."},
+  {n:"Coliseu · Fórum · Palatino",p:1,d:"Ingresso combinado para segunda, 16/11. Reserve 3h."},
+  {n:"Museus Vaticanos & Capela Sistina",p:1,d:"Terça, 17/11, no horário livre da reunião. Reserve no site oficial."},
   {n:"Basílica de São Pedro",p:1,d:"Gratuita, com fila de segurança. A subida à cúpula é paga e a vista compensa."},
-  {n:"Pantheon",p:1,d:"€7 com horário marcado. Fica no caminho do dia 16."},
+  {n:"Pantheon",p:1,d:"€7 com horário marcado. Fica no caminho da segunda à tarde."},
   {n:"Fontana di Trevi & Escadaria da Espanha",p:2,d:"Melhor à noite ou bem cedo."},
   {n:"Piazza Navona & Campo de' Fiori",p:2,d:"O mercado de Natal da Navona só monta em dezembro."},
   {n:"Trastevere",p:2,d:"Bairro boêmio para o aperitivo e o jantar."},
-  {n:"Aventino",p:3,d:"Buraco da fechadura dos Cavaleiros de Malta e Giardino degli Aranci. Bom para a manhã do dia 18."}
+  {n:"Aventino",p:3,d:"Buraco da fechadura dos Cavaleiros de Malta e Giardino degli Aranci. Bom para a manhã de quarta, 18/11."}
  ]
 },
 {
  id:"munique", name:"Munique", country:"Alemanha", flag:"🇩🇪", color:"linear-gradient(135deg,#14284a,#2f6ea8)", bar:"#2f6ea8",
- dates:"18–20/11 + 24–26/11", nights:4, weather:"0–7 °C", sunset:"~16h35",
- transport:"Chegada de avião · base do carro · voo de volta em 26/11",
- lead:"Munique aparece duas vezes. Na ida (18–20) é cervejaria, BMW e cidade. Na volta (24–26) o Christkindlmarkt já estará aberto: 2026 é o primeiro ano em que ele começa antes, em 20/11.",
+ dates:"18–21/11 + 25–26/11", nights:4, weather:"0–7 °C", sunset:"~16h35",
+ transport:"Chegada de avião (18/11) · bate-volta a Metzingen (19/11) · jogo do Bayern (20/11) · volta de Praga (25/11) · voo em 26/11",
+ lead:"Munique aparece duas vezes. Na ida (18–21) tem o outlet em Metzingen, cervejarias, BMW e Bayern × Köln na Allianz Arena, justamente no dia em que abrem o Christkindlmarkt e o mercado medieval. Na volta (25/11) os mercados estão a pleno, e o Tollwood também já abriu.",
  alerts:[
-  {c:"green",t:"<b>Christkindlmarkt do Marienplatz: 20/11 a 24/12/2026</b>, fechado no dia 22/11. Vocês pegam nas noites de 24 e 25/11."},
-  {c:"",t:"<b>Carro</b>: se der, retirem só no dia 20, na saída para a Áustria. Nos dias 18 e 19 Munique se faz de U-Bahn e S-Bahn, e estacionar no centro é caro. Na retirada, confirmem pneus de inverno e <b>autorização para entrar na República Tcheca</b>, porque algumas locadoras cobram taxa ou restringem."},
+  {c:"green",t:"<b>Sexta, 20/11 é o dia perfeito</b>: abrem o Christkindlmarkt do Marienplatz e o mercado medieval do Wittelsbacherplatz (inauguração às 18h, com procissão de tochas). À noite tem <b>Bayern × Köln</b> na Allianz Arena, pela 10ª rodada da Bundesliga, com início às 20h30."},
+  {c:"red",t:"<b>Jogo do Bayern</b>: confiram se o ingresso inclui o transporte público no dia do jogo, como costuma acontecer. Vão de U6 até Fröttmaning (~30 min do centro) e estejam na arena até ~19h45. Se quiserem a abertura do mercado medieval às 18h, saiam de lá às 18h45 no máximo."},
+  {c:"",t:"<b>Carro</b>: precisam dele já na quinta, 19/11, para Metzingen. No centro de Munique, deixem na garagem do hotel e andem de U-Bahn e S-Bahn. Na retirada, confirmem pneus de inverno e <b>autorização para entrar na República Tcheca</b>, porque algumas locadoras cobram taxa ou restringem."},
   {c:"",t:"<b>Glockenspiel</b> do Marienplatz: no inverno toca às 11h e às 12h."},
-  {c:"red",t:"<b>Dia 26 · tax free</b>: carimbem as notas na alfândega do aeroporto <b>antes</b> de despachar as malas com as compras."}
+  {c:"red",t:"<b>Dia 26 · tax free</b>: carimbem as notas do outlet na alfândega do aeroporto <b>antes</b> de despachar as malas com as compras."}
  ],
  days:[
   {d:"18",w:"Qua",t:"Chegada · Altstadt e primeira cervejaria",n:"Voo de Roma",m:"Voo.",a:"Marienplatz → Frauenkirche → Viktualienmarkt → Hofbräuhaus (uma vez na vida).",e:"Jantar no Augustiner Bräustuben e drink no Schumann's."},
-  {d:"19",w:"Qui",t:"BMW · Residenz · Englischer Garten",n:"",m:"Weißwurst no café da manhã da Gaststätte Großmarkthalle (antes do meio-dia, é a tradição) → BMW Welt e BMW Museum, no Olympiapark.",a:"Residenz → Hofgarten → Englischer Garten e os surfistas do Eisbach → subida no Alter Peter ao pôr do sol.",e:"Jantar no Spatenhaus an der Oper ou no Brenner Grill; drink no Blue Spa Bar do Bayerischer Hof, com vista para as torres da Frauenkirche."},
-  {d:"20",w:"Sex",t:"Retirada do carro · rumo ao Tirol",n:"Veja a aba Áustria",m:"Carro e estrada (opção: Neuschwanstein no caminho).",a:"—",e:"—"},
-  {d:"24",w:"Ter",t:"Volta de Praga · Christkindlmarkt",n:"~4h de estrada desde Praga",m:"Estrada.",a:"Check-in.",e:"Christkindlmarkt do Marienplatz e Kripperlmarkt, Glühwein e jantar no Andechser am Dom ou no Schneider Bräuhaus."},
-  {d:"25",w:"Qua",t:"Outletcity Metzingen",n:"Veja a aba Metzingen",m:"Saída às 7h30.",a:"Outlet.",e:"Volta a Munique, último jantar no Haxnbauer e Christkindlmarkt."},
-  {d:"26",w:"Qui",t:"Voo de volta",n:"Devolução do carro no aeroporto",m:"Chegue com 3h30 de antecedência: tax free na alfândega antes do check-in.",a:"—",e:"—"}
+  {d:"19",w:"Qui",t:"Outletcity Metzingen",n:"Veja a aba Metzingen · ~2h30 de carro cada trecho",m:"Saída às 7h30.",a:"Outlet das 10h até ~17h.",e:"Volta a Munique e jantar no Haxnbauer ou no Brenner Grill."},
+  {d:"20",w:"Sex",t:"BMW · mercados de Natal · Bayern × Köln",n:"Abertura dos mercados e jogo à noite",m:"Weißwurst no café da manhã da Gaststätte Großmarkthalle (antes do meio-dia, é a tradição) → BMW Welt e BMW Museum, no Olympiapark.",a:"Residenz e Hofgarten → Christkindlmarkt do Marienplatz no primeiro dia → mercado medieval do Wittelsbacherplatz (inauguração às 18h).",e:"U6 até Fröttmaning → <b>Bayern × Köln às 20h30</b> na Allianz Arena. Depois, uma última cerveja no Augustiner ou no Schneider Bräuhaus."},
+  {d:"21",w:"Sáb",t:"Rumo ao Tirol",n:"Veja a aba Áustria",m:"Saída para a Áustria (opção: Neuschwanstein ou Innsbruck no caminho).",a:"—",e:"—"},
+  {d:"25",w:"Qua",t:"Volta de Praga · noite de mercados",n:"~4h de estrada desde Praga",m:"Estrada.",a:"Check-in. A partir das 14h: Tollwood na Theresienwiese, o mercado de Natal alternativo.",e:"Christkindlmarkt, Kripperlmarkt e mercado medieval (até 21h). Último jantar no Spatenhaus an der Oper ou no Andechser am Dom."},
+  {d:"26",w:"Qui",t:"Voo de volta",n:"Devolução do carro no aeroporto",m:"Cheguem com 3h30 de antecedência: tax free na alfândega antes do check-in.",a:"—",e:"—"}
  ],
  food:[
   {n:"Augustiner Bräustuben",t:"Bávaro · cervejaria",p:2,m:["almoço","jantar"],h:"Diário · ~10h–24h",a:"Landsberger Str. · dentro da cervejaria Augustiner",w:"No prédio da Augustiner, a cerveja favorita dos muniquenses. Clima de vizinhança e preço justo.",o:"Schweinebraten com Knödel e Augustiner Edelstoff."},
@@ -272,17 +273,47 @@ const CITIES = [
  visit:[
   {n:"Marienplatz & Glockenspiel",p:1,d:"O coração da cidade. O Glockenspiel toca às 11h e às 12h."},
   {n:"BMW Welt & BMW Museum",p:1,d:"A BMW Welt é gratuita; o museu é pago. Fica no Olympiapark."},
-  {n:"Christkindlmarkt (na volta)",p:1,d:"Noites de 24 e 25/11. Veja a aba 🎄."},
+  {n:"Mercados de Natal",p:1,d:"Abrem em 20/11; voltem na noite de 25/11. Veja a aba 🎄."},
+  {n:"Bayern × Köln · Allianz Arena",p:1,d:"Sexta, 20/11, às 20h30. U6 até Fröttmaning."},
   {n:"Residenz",p:2,d:"O palácio dos reis da Baviera, com o Antiquarium renascentista."},
   {n:"Englischer Garten & Eisbach",p:2,d:"Surfistas na onda do rio, mesmo no frio."},
   {n:"Alter Peter",p:2,d:"Torre com a melhor vista do centro e dos Alpes em dia claro."},
   {n:"Viktualienmarkt",p:2,d:"Mercado de comida de rua e cerveja dos locais."},
-  {n:"Allianz Arena",p:3,d:"Tour pelo estádio do Bayern (confirme jogos e horários)."}
+  {n:"Museu do FC Bayern",p:3,d:"Dentro da Allianz Arena. Em dia de jogo, confirmem se abre e até que horas."}
+ ]
+},
+{
+ id:"metzingen", name:"Outletcity Metzingen", country:"Alemanha", flag:"🛍️", color:"linear-gradient(135deg,#1c1c1c,#555)", bar:"#555",
+ dates:"19/11", nights:0, weather:"0–6 °C", sunset:"~16h50",
+ transport:"Carro: Munique → Metzingen ~2h30 pela A8 · volta para Munique",
+ lead:"Dia de compras na cidade-outlet de luxo onde a Hugo Boss nasceu, num bate-volta desde Munique na quinta, 19/11. Chegando cedo e na semana, pegam as lojas mais vazias.",
+ alerts:[
+  {c:"green",t:"<b>Horário</b>: seg–sex 10h–20h e sáb 9h–20h; domingo fechado. Na quinta, 19/11, funciona das 10h às 20h."},
+  {c:"red",t:"<b>Tax free (não residentes na UE)</b>: peçam o formulário em cada loja mostrando o passaporte (há valor mínimo por nota). Na saída, carimbem na alfândega do aeroporto de Munique <b>antes</b> de despachar a mala. Sem carimbo não há reembolso."},
+  {c:"",t:"<b>Estratégia</b>: cheguem às 10h, comecem pelas marcas mais disputadas e voltem ao carro no meio do dia para deixar as sacolas."},
+  {c:"",t:"<b>Opcional</b>: Museu da Mercedes-Benz ou da Porsche, em Stuttgart (40 min), antes de voltar. O mercado de Natal de Stuttgart só abre em 25/11. Lembrem que a volta até Munique leva ~2h30, e que a sexta tem jogo do Bayern."}
+ ],
+ days:[
+  {d:"19",w:"Qui",t:"Outletcity Metzingen",n:"Bate-volta desde Munique",m:"Saída de Munique às 7h30 (2h30 pela A8).",a:"Outlet das 10h até ~17h, com almoço no Marché, na praça do outlet.",e:"Volta a Munique (~2h30) e jantar no Haxnbauer ou no Brenner Grill."}
+ ],
+ food:[
+  {n:"Marché Metzingen",t:"Mercado-restaurante · dentro do outlet",p:2,m:["almoço","jantar"],h:"Seg–Sex 10h–21h · Sáb 9h–21h",a:"Hugo-Boss-Platz 6 · Outletcity",w:"Cozinha ao vivo, prático e sem sair do circuito de lojas.",o:"Prato do dia ou Maultaschen."},
+  {n:"Alte Kanzlei",t:"Suábio · Stuttgart",p:3,m:["almoço","jantar"],h:"Diário · confirme",a:"Schillerplatz · Stuttgart",w:"Casa histórica na praça do mercado, para quem esticar até Stuttgart.",o:"Maultaschen e Rostbraten com Spätzle."},
+  {n:"Cube",t:"Contemporâneo · cubo de vidro",p:4,m:["jantar"],h:"Confirme",a:"Topo do Kunstmuseum · Schlossplatz, Stuttgart",w:"Restaurante no cubo de vidro com vista para o Schlossplatz iluminado.",o:"Menu da estação."},
+  {n:"Weinstube Schellenturm",t:"Taverna de vinho suábia",p:2,m:["jantar"],h:"Confirme os dias",a:"Torre medieval · Stuttgart",w:"Taverna numa torre do século XVI, com vinho da região de Württemberg.",o:"Linsen mit Spätzle e vinho Trollinger."}
+ ],
+ night:[
+  {n:"Volta para Munique",t:"Noite livre",h:"—",w:"A noite é em Munique: vejam a aba Rooftops & noite de Munique."}
+ ],
+ visit:[
+  {n:"Outletcity Metzingen",p:1,d:"Cerca de 100 lojas premium espalhadas pela cidade."},
+    {n:"Mercedes-Benz Museum",p:2,d:"130 anos de automóvel, a 40 min. Confirme o horário."},
+  {n:"Porsche Museum",p:3,d:"Em Zuffenhausen, a 45 min. Alternativa ao da Mercedes."}
  ]
 },
 {
  id:"austria", name:"Ötztal & Tirol", country:"Áustria", flag:"🇦🇹", color:"linear-gradient(135deg,#12303a,#3f8a9a)", bar:"#3f8a9a",
- dates:"20/11 → 22/11", nights:2, weather:"-5–5 °C no vale · bem mais frio no alto", sunset:"~16h35",
+ dates:"21/11 → 23/11", nights:2, weather:"-5–5 °C no vale · bem mais frio no alto", sunset:"~16h35",
  transport:"Carro: Munique → Längenfeld ~2h30 · Saída: Praga (~6h)",
  lead:"Base no AQUA DOME, em Längenfeld: termas com piscinas a 34–36 °C de frente para picos de 3.000 m. Em volta ficam Sölden, com o ice Q (cenário de 007), e Innsbruck, com o Christkindlmarkt já aberto.",
  alerts:[
@@ -293,9 +324,9 @@ const CITIES = [
   {c:"",t:"<b>Pneus de inverno</b> são obrigatórios na Áustria em condições de inverno. Carro alugado na Alemanha nessa época costuma vir equipado; confirmem."}
  ],
  days:[
-  {d:"20",w:"Sex",t:"Munique → (Neuschwanstein) → Längenfeld",n:"Escolham a rota",m:"Rota A, com castelo: Neuschwanstein (2h de Munique; ingresso com horário, reservem) → Fernpass → Ötztal. Rota B, direto via Innsbruck (~2h30).",a:"Check-in no AQUA DOME e termas ao pôr do sol.",e:"Jantar no hotel e sauna à noite."},
-  {d:"21",w:"Sáb",t:"Sölden/ice Q ou Innsbruck · AQUA DOME",n:"Decidam pela neve e pelo tempo",m:"Se o Gaislachkogl estiver aberto: teleférico até 3.048 m, 007 Elements e almoço no ice Q. Senão: Innsbruck (50 min) com Altstadt, Goldenes Dachl e Christkindlmarkt.",a:"Volta para as termas e massagem (reservem no spa).",e:"Jantar no hotel ou, se estiverem em Innsbruck, no Lichtblick com drink no 360° Bar."},
-  {d:"22",w:"Dom",t:"Estrada para Praga",n:"~6h via Munique e Regensburg",m:"Saída às 8h. Opção: almoço em Regensburg, cidade medieval UNESCO com uma das cozinhas de salsicha mais antigas do mundo (Wurstkuchl).",a:"Chegada a Praga no fim da tarde.",e:"—"}
+  {d:"21",w:"Sáb",t:"Munique → Innsbruck → Längenfeld",n:"Escolham a rota",m:"Rota A, com mercado: Innsbruck (~2h), Altstadt, Goldenes Dachl e Christkindlmarkt (aberto desde meados de novembro). Rota B, com castelo: Neuschwanstein (2h; ingresso com horário) → Fernpass → Ötztal.",a:"Almoço em Innsbruck (Weisses Rössl ou Ottoburg) → Längenfeld (~1h). Check-in no AQUA DOME e termas ao pôr do sol.",e:"Jantar no hotel e sauna à noite."},
+  {d:"22",w:"Dom",t:"Sölden/ice Q · AQUA DOME",n:"Decidam pela neve e pelo tempo",m:"Se o Gaislachkogl estiver aberto: teleférico até 3.048 m, 007 Elements e almoço no ice Q. Senão: dia inteiro de termas e spa.",a:"Volta para as termas e massagem (reservem no spa).",e:"Jantar no hotel."},
+  {d:"23",w:"Seg",t:"Estrada para Praga",n:"~6h via Munique e Regensburg",m:"Saída às 8h. Opção: almoço em Regensburg, cidade medieval UNESCO com uma das cozinhas de salsicha mais antigas do mundo (Wurstkuchl).",a:"Chegada a Praga no fim da tarde.",e:"—"}
  ],
  food:[
   {n:"Restaurantes do AQUA DOME",t:"Austríaco/alpino · hotel",p:3,m:["almoço","jantar"],h:"Diário",a:"Längenfeld (hospedagem de vocês)",w:"A solução para as duas noites: sem dirigir na neve à noite e com as termas a um elevador de distância.",o:"Kaiserschmarrn de sobremesa."},
@@ -308,21 +339,21 @@ const CITIES = [
  night:[
   {n:"AQUA DOME à noite",t:"Termas ao ar livre",h:"Até 23h",w:"Piscinas externas aquecidas, montanhas iluminadas e talvez neve caindo. É a noite mais diferente da viagem."},
   {n:"360° Bar · Innsbruck",t:"Rooftop circular",h:"Confirme",w:"Bar redondo com vista completa dos Alpes sobre a cidade."},
-  {n:"Christkindlmarkt de Innsbruck",t:"Glühwein sob o Telhado Dourado",h:"Diário · 11h–21h",w:"Se forem a Innsbruck no sábado, o fim de tarde é no mercado."},
+  {n:"Christkindlmarkt de Innsbruck",t:"Glühwein sob o Telhado Dourado",h:"Diário · 11h–21h",w:"Parada no caminho de sábado, 21/11."},
   {n:"Après-ski em Sölden",t:"Bares de montanha",h:"Só se a temporada já tiver começado",w:"No início da temporada o movimento é menor. Confirmem antes de ir."}
  ],
  visit:[
   {n:"AQUA DOME",p:1,d:"12 piscinas a 34–36 °C, saunas e as três \"tigelas\" flutuantes externas."},
   {n:"Gaislachkogl · ice Q · 007 Elements",p:1,d:"3.048 m, instalação de James Bond dentro da montanha. Depende da abertura do inverno."},
-  {n:"Innsbruck · Altstadt & Goldenes Dachl",p:1,d:"Centro medieval com o Telhado Dourado e mercado de Natal. Fica a 50 min."},
-  {n:"Neuschwanstein",p:2,d:"O castelo que inspirou a Disney, no caminho do dia 20. Ingresso com horário."},
+  {n:"Innsbruck · Altstadt & Goldenes Dachl",p:1,d:"Centro medieval com o Telhado Dourado e mercado de Natal. Parada no caminho de 21/11."},
+  {n:"Neuschwanstein",p:2,d:"O castelo que inspirou a Disney, opção de rota no dia 21. Ingresso com horário."},
   {n:"Nordkette · Innsbruck",p:2,d:"Funicular de Zaha Hadid e teleférico do centro direto para 2.000 m."},
   {n:"Regensburg",p:3,d:"Parada para o almoço no caminho para Praga, com a ponte de pedra do século XII."}
  ]
 },
 {
  id:"praga", name:"Praga", country:"República Tcheca", flag:"🇨🇿", color:"linear-gradient(135deg,#231a35,#5b4b8a)", bar:"#5b4b8a",
- dates:"22/11 → 24/11", nights:2, weather:"0–6 °C", sunset:"~16h10",
+ dates:"23/11 → 25/11", nights:2, weather:"0–6 °C", sunset:"~16h10",
  transport:"Carro: ~6h desde Längenfeld · Saída: Munique (~4h)",
  lead:"Praga em novembro tem neblina no Moldava, cerveja tcheca de tanque e preços bem menores que em Munique. Os grandes mercados de Natal só abrem em 28/11: vocês veem a montagem, e os de bairro já funcionam.",
  alerts:[
@@ -331,9 +362,9 @@ const CITIES = [
   {c:"",t:"<b>Moeda: coroa tcheca (CZK)</b>. Paguem com cartão e nunca troquem dinheiro nas casas de câmbio do centro."}
  ],
  days:[
-  {d:"22",w:"Dom",t:"Chegada · Praga à noite",n:"",m:"Estrada.",a:"Check-in e caminhada noturna: Ponte Carlos iluminada → Malá Strana.",e:"Jantar no Lokál Dlouhááá (cerveja de tanque) e drink no Hemingway Bar."},
-  {d:"23",w:"Seg",t:"Castelo · Malá Strana · Cidade Velha",n:"O dia completo",m:"Ponte Carlos às 8h, ainda vazia → Malá Strana → Castelo de Praga (Catedral de São Vito e Viela Dourada) → Biblioteca de Strahov e a cervejaria do mosteiro.",a:"Almoço no Kantýna → Cidade Velha: Relógio Astronômico (toca de hora em hora), Igreja de Týn e Josefov.",e:"Jantar no Mlýnec (vista da Ponte Carlos) ou no Field (estrela Michelin); depois Black Angel's Bar."},
-  {d:"24",w:"Ter",t:"Manhã livre e volta a Munique",n:"",m:"Vyšehrad ou Casa Dançante (Glass Bar com vista) → almoço rápido no Naše maso.",a:"Estrada para Munique (~4h).",e:"Munique."}
+  {d:"23",w:"Seg",t:"Chegada · Praga à noite",n:"",m:"Estrada.",a:"Check-in e caminhada noturna: Ponte Carlos iluminada → Malá Strana.",e:"Jantar no Lokál Dlouhááá (cerveja de tanque) e drink no Hemingway Bar."},
+  {d:"24",w:"Ter",t:"Castelo · Malá Strana · Cidade Velha",n:"O dia completo",m:"Ponte Carlos às 8h, ainda vazia → Malá Strana → Castelo de Praga (Catedral de São Vito e Viela Dourada) → Biblioteca de Strahov e a cervejaria do mosteiro.",a:"Almoço no Kantýna → Cidade Velha: Relógio Astronômico (toca de hora em hora), Igreja de Týn e Josefov.",e:"Jantar no Mlýnec (vista da Ponte Carlos) ou no Field (estrela Michelin); depois Black Angel's Bar."},
+  {d:"25",w:"Qua",t:"Manhã livre e volta a Munique",n:"",m:"Vyšehrad ou Casa Dançante (Glass Bar com vista) → almoço rápido no Naše maso.",a:"Estrada para Munique (~4h).",e:"Munique."}
  ],
  food:[
   {n:"Lokál Dlouhááá",t:"Pub tcheco · cerveja de tanque",p:1,m:["almoço","jantar"],h:"Diário · até tarde",a:"Dlouhá · Cidade Velha",w:"Pilsner Urquell de tanque, sem pasteurizar, servida como manda a tradição. A comida tcheca de pub é honesta.",o:"Svíčková, guláš e tatarák."},
@@ -357,40 +388,10 @@ const CITIES = [
   {n:"Ponte Carlos",p:1,d:"Às 8h está vazia; à noite, iluminada."},
   {n:"Praça da Cidade Velha & Relógio Astronômico",p:1,d:"O relógio funciona desde 1410 e se movimenta a cada hora."},
   {n:"Malá Strana",p:1,d:"Bairro barroco aos pés do Castelo."},
-  {n:"Josefov · Bairro judeu",p:2,d:"Sinagogas e o cemitério antigo. Fecha aos sábados; na segunda, ok."},
+  {n:"Josefov · Bairro judeu",p:2,d:"Sinagogas e o cemitério antigo. Fecha aos sábados; na terça, ok."},
   {n:"Biblioteca de Strahov",p:2,d:"Salões barrocos e cervejaria do mosteiro ao lado."},
   {n:"Vyšehrad",p:3,d:"Fortaleza com vista do rio, sem turistas."},
   {n:"Casa Dançante",p:3,d:"Arquitetura de Frank Gehry com bar no topo."}
- ]
-},
-{
- id:"metzingen", name:"Outletcity Metzingen", country:"Alemanha", flag:"🛍️", color:"linear-gradient(135deg,#1c1c1c,#555)", bar:"#555",
- dates:"25/11", nights:0, weather:"0–6 °C", sunset:"~16h45",
- transport:"Carro: Munique → Metzingen ~2h30 pela A8 · volta para Munique",
- lead:"Dia de compras na cidade-outlet de luxo onde a Hugo Boss nasceu. Na quarta, 25/11, o dia coincide com a abertura do mercado de Natal de Stuttgart, a 35 min de lá.",
- alerts:[
-  {c:"green",t:"<b>Horário</b>: seg–sex 10h–20h e sáb 9h–20h; domingo fechado. Na quarta, 25/11, funciona das 10h às 20h."},
-  {c:"red",t:"<b>Tax free (não residentes na UE)</b>: peçam o formulário em cada loja mostrando o passaporte (há valor mínimo por nota). Na saída, carimbem na alfândega do aeroporto de Munique <b>antes</b> de despachar a mala. Sem carimbo não há reembolso."},
-  {c:"",t:"<b>Estratégia</b>: cheguem às 10h, comecem pelas marcas mais disputadas e voltem ao carro no meio do dia para deixar as sacolas."},
-  {c:"",t:"<b>Opcional</b>: o mercado de Natal de Stuttgart abre exatamente no dia 25/11 (cerimônia às 18h no Altes Schloss). Outra opção é o Museu da Mercedes-Benz ou da Porsche. Lembrem que a volta até Munique leva ~2h30."}
- ],
- days:[
-  {d:"25",w:"Qua",t:"Outletcity Metzingen",n:"Dia inteiro",m:"Saída de Munique às 7h30 (2h30 pela A8).",a:"Outlet das 10h até ~17h, com almoço no Marché, na praça do outlet.",e:"Opção A: Stuttgart, abertura do mercado de Natal às 18h, e volta a Munique (~2h20). Opção B: volta direta e último jantar em Munique."}
- ],
- food:[
-  {n:"Marché Metzingen",t:"Mercado-restaurante · dentro do outlet",p:2,m:["almoço","jantar"],h:"Seg–Sex 10h–21h · Sáb 9h–21h",a:"Hugo-Boss-Platz 6 · Outletcity",w:"Cozinha ao vivo, prático e sem sair do circuito de lojas.",o:"Prato do dia ou Maultaschen."},
-  {n:"Alte Kanzlei",t:"Suábio · Stuttgart",p:3,m:["jantar"],h:"Diário · confirme",a:"Schillerplatz · Stuttgart, no meio do mercado de Natal",w:"Casa histórica na praça do mercado. Bom para jantar antes de pegar a estrada.",o:"Maultaschen e Rostbraten com Spätzle."},
-  {n:"Cube",t:"Contemporâneo · cubo de vidro",p:4,m:["jantar"],h:"Confirme",a:"Topo do Kunstmuseum · Schlossplatz, Stuttgart",w:"Restaurante no cubo de vidro com vista para o Schlossplatz iluminado.",o:"Menu da estação."},
-  {n:"Weinstube Schellenturm",t:"Taverna de vinho suábia",p:2,m:["jantar"],h:"Confirme os dias",a:"Torre medieval · Stuttgart",w:"Taverna numa torre do século XVI, com vinho da região de Württemberg.",o:"Linsen mit Spätzle e vinho Trollinger."}
- ],
- night:[
-  {n:"Stuttgarter Weihnachtsmarkt",t:"Abertura em 25/11",h:"Estandes a partir das 17h · cerimônia às 18h",w:"Um dos mercados mais antigos e bonitos da Europa, com telhados decorados. Vejam a aba 🎄."}
- ],
- visit:[
-  {n:"Outletcity Metzingen",p:1,d:"Cerca de 100 lojas premium espalhadas pela cidade."},
-  {n:"Mercado de Natal de Stuttgart",p:2,d:"Abre justamente no dia 25/11. Fica a 35 min."},
-  {n:"Mercedes-Benz Museum",p:2,d:"130 anos de automóvel, a 40 min. Confirme o horário."},
-  {n:"Porsche Museum",p:3,d:"Em Zuffenhausen, a 45 min. Alternativa ao da Mercedes."}
  ]
 }
 ];
@@ -398,30 +399,27 @@ const CITIES = [
 /* ---------- MERCADOS DE NATAL ---------- */
 const MARKETS = {
  roma:{note:"Ainda não é Natal em Roma: o mercado da Piazza Navona e o presépio da Praça São Pedro só são montados em dezembro. Os mercados desta viagem estão em Munique, Innsbruck e Stuttgart.",list:[]},
- munique:{note:"Novidade de 2026: o Christkindlmarkt do Marienplatz começa mais cedo, em 20/11 (antes abria só na segunda antes do 1º Advento). Ele fecha no dia 22/11. Vocês pegam nas noites de 24 e 25/11.",
+ munique:{note:"Vocês estão em Munique justamente no dia em que a temporada começa: na sexta, 20/11, abrem o Christkindlmarkt do Marienplatz e o mercado medieval do Wittelsbacherplatz. Na quarta, 25/11, voltam com tudo aberto, inclusive o Tollwood, que abre em 24/11.",
  list:[
-  {n:"Münchner Christkindlmarkt",addr:"Marienplatz, 80331 München · também Kaufinger- e Neuhauser Straße",dates:"20/11 → 24/12/2026 (fechado em 22/11)",hours:"Seg–Sáb 10h–21h · Dom 10h–20h",fit:"Ter 24/11 à noite, na volta de Praga",what:"O mercado mais antigo de Munique, com 137 estandes e a árvore de ~25 m em frente à prefeitura neogótica. Há música de Advento na sacada da prefeitura.",eat:"Glühwein, Feuerzangenbowle, amêndoas caramelizadas e castanhas quentes."},
+  {n:"Mercado de Natal medieval · Münchner Adventsspektakel",addr:"Wittelsbacherplatz · Brienner Straße 6–10, 80333 München · U-Bahn Odeonsplatz (3 min a pé)",dates:"20/11 → 23/12/2026",hours:"Diário · 11h–21h · inauguração na sexta, 20/11, às 18h, com procissão de tochas e música medieval",fit:"Sex 20/11 às 18h (antes do jogo, saindo às 18h45) e Qua 25/11 à noite",what:"Uma cidade de barracas medieval: ferreiros forjando ao vivo, sopradores de vidro, cunhagem de moedas, couro e caligrafia, com malabaristas e show de fogo nos fins de semana. A entrada é gratuita.",eat:"Met (hidromel) quente na caneca de barro com o selo da cidade de 1323, pão no espeto (Stockbrot), carne na brasa e castanhas."},
+  {n:"Münchner Christkindlmarkt",addr:"Marienplatz, 80331 München · também Kaufinger- e Neuhauser Straße",dates:"20/11 → 24/12/2026 (fechado em 22/11)",hours:"Seg–Sáb 10h–21h · Dom 10h–20h",fit:"Sex 20/11 à tarde (primeiro dia) e Qua 25/11 à noite",what:"O mercado mais antigo de Munique, com 137 estandes e a árvore de ~25 m em frente à prefeitura neogótica. Há música de Advento na sacada da prefeitura.",eat:"Glühwein, Feuerzangenbowle, amêndoas caramelizadas e castanhas quentes."},
   {n:"Kripperlmarkt",addr:"Rindermarkt · aos pés da igreja Alter Peter",dates:"Mesmo período do Christkindlmarkt",hours:"Mesmo horário",fit:"Junto com o Marienplatz",what:"O maior mercado de presépios da Alemanha, com figuras artesanais, cenários e peças entalhadas. Bom para um presente diferente.",eat:"—"},
-  {n:"Canto de Advento na Neuhauser Straße",addr:"Em frente à Michaelskirche · Neuhauser Straße",dates:"Quarta, 25/11/2026",hours:"16h30 (~30 min) · gratuito",fit:"Só se voltarem cedo de Metzingen",what:"Apresentação tradicional de canto natalino na rua de pedestres.",eat:"—"},
-  {n:"Outros mercados de Munique",addr:"Wittelsbacherplatz (medieval) · Residenz (Kaiserhof) · Theresienwiese (Tollwood)",dates:"Datas de 2026 a confirmar",hours:"Confirme",fit:"Noite de 25/11, se estiverem abertos",what:"O mercado medieval, com tochas, ferreiros e hidromel, é o mais diferente da cidade. Confirmem se já abriu na semana de vocês.",eat:"Met (hidromel) quente e pão no espeto."}
+  {n:"Tollwood Winterfestival",addr:"Theresienwiese, 80336 München · U4/U5 Theresienwiese",dates:"24/11 → 23/12/2026",hours:"Dias úteis a partir das 14h · entrada gratuita",fit:"Qua 25/11 no fim da tarde, na volta de Praga",what:"Mercado de Natal alternativo onde acontece a Oktoberfest: tendas de artesanato justo, shows, circo e comida do mundo todo.",eat:"Comida orgânica do mundo todo, Glühwein e Bratwurst."},
+  {n:"Canto de Advento na Neuhauser Straße",addr:"Em frente à Michaelskirche · Neuhauser Straße",dates:"Quarta, 25/11/2026",hours:"16h30 (~30 min) · gratuito",fit:"Só se chegarem de Praga a tempo",what:"Apresentação tradicional de canto natalino na rua de pedestres.",eat:"—"}
  ]},
- austria:{note:"O Tirol já está em clima de Natal: os mercados de Innsbruck abrem em meados de novembro. Se forem a Innsbruck no sábado, 21/11, encaixem os três abaixo num passeio a pé.",
+ austria:{note:"O Tirol já está em clima de Natal: os mercados de Innsbruck abrem em meados de novembro. Parando em Innsbruck no sábado, 21/11, a caminho do AQUA DOME, dá para fazer os três abaixo num passeio a pé.",
  list:[
-  {n:"Christkindlmarkt Altstadt",addr:"Herzog-Friedrich-Straße · em frente ao Goldenes Dachl, 6020 Innsbruck",dates:"Meados de nov → 23/12/2026",hours:"Diário · 11h–21h",fit:"Sáb 21/11 (opção Innsbruck)",what:"O mais antigo e tradicional de Innsbruck: estandes encostados nas casas medievais, sob a árvore gigante, em frente ao Telhado Dourado.",eat:"Kiachl (massa frita com geleia de oxicoco ou chucrute), Glühwein e Speckknödel."},
+  {n:"Christkindlmarkt Altstadt",addr:"Herzog-Friedrich-Straße · em frente ao Goldenes Dachl, 6020 Innsbruck",dates:"Meados de nov → 23/12/2026",hours:"Diário · 11h–21h",fit:"Sáb 21/11, parada no caminho",what:"O mais antigo e tradicional de Innsbruck: estandes encostados nas casas medievais, sob a árvore gigante, em frente ao Telhado Dourado.",eat:"Kiachl (massa frita com geleia de oxicoco ou chucrute), Glühwein e Speckknödel."},
   {n:"Christkindlmarkt Marktplatz",addr:"Marktplatz · Innrain 4, 6020 Innsbruck",dates:"13/11 → 19/12/2026",hours:"Diário · 11h–21h",fit:"A 3 min da Altstadt, à beira do rio Inn",what:"Mercado na beira do rio, de frente para as casas coloridas da margem oposta e a Nordkette nevada.",eat:"Tiroler Gröstl e ponche."},
   {n:"Christkindlmarkt St. Nikolaus",addr:"Hans-Brenner-Platz, 6020 Innsbruck",dates:"20/11 → 23/12/2026",hours:"Diário · 16h–21h",fit:"Fim de tarde de sábado",what:"O mais tranquilo e de bairro, com música ao vivo todos os dias.",eat:"Glühwein caseiro."}
  ]},
- praga:{note:"Atenção: os grandes mercados da Praça da Cidade Velha e da Praça Venceslau só abrem em 28/11/2026, depois que vocês saem. Vocês verão a montagem e a árvore chegando. Os de bairro já estarão funcionando.",
+ praga:{note:"Atenção: os grandes mercados da Praça da Cidade Velha e da Praça Venceslau só abrem em 28/11/2026, depois que vocês saem (25/11). Vocês verão a montagem e a árvore chegando. Os de bairro já estarão funcionando.",
  list:[
-  {n:"Mercado de Natal da Náměstí Míru",addr:"Náměstí Míru · Vinohrady, Praha 2 (metrô A)",dates:"A partir de ~20/11/2026 (confirme)",hours:"Diário · ~10h–18h",fit:"Seg 23/11 no fim da tarde",what:"Mercado de bairro em frente à igreja neogótica de Santa Ludmila, frequentado por quem mora em Praga.",eat:"Svařák (vinho quente tcheco), klobása grelhada e trdelník."},
-  {n:"Havelské tržiště",addr:"Havelská · entre a Cidade Velha e a Praça Venceslau",dates:"Ano todo · decoração de Natal no fim de novembro",hours:"Diário · dia",fit:"No caminho do dia 23",what:"Mercado permanente do centro, com bancas de artesanato, marionetes e frutas.",eat:"—"},
+  {n:"Mercado de Natal da Náměstí Míru",addr:"Náměstí Míru · Vinohrady, Praha 2 (metrô A)",dates:"A partir de ~20/11/2026 (confirme)",hours:"Diário · ~10h–18h",fit:"Ter 24/11 no fim da tarde",what:"Mercado de bairro em frente à igreja neogótica de Santa Ludmila, frequentado por quem mora em Praga.",eat:"Svařák (vinho quente tcheco), klobása grelhada e trdelník."},
+  {n:"Havelské tržiště",addr:"Havelská · entre a Cidade Velha e a Praça Venceslau",dates:"Ano todo · decoração de Natal no fim de novembro",hours:"Diário · dia",fit:"No caminho do dia 24",what:"Mercado permanente do centro, com bancas de artesanato, marionetes e frutas.",eat:"—"},
   {n:"Praça da Cidade Velha (em montagem)",addr:"Staroměstské náměstí, Praha 1",dates:"Abre em 28/11/2026",hours:"Depois da abertura: 10h–22h",fit:"Vocês verão a montagem",what:"O mercado mais famoso da República Tcheca, com árvore de ~26 m em frente à Igreja de Týn. Fica de registro para uma próxima viagem.",eat:"—"}
  ]},
- metzingen:{note:"O dia 25/11 é exatamente a abertura do mercado de Natal de Stuttgart, um dos maiores e mais antigos da Europa, a 35 min do outlet. Se a energia permitir, é o fechamento perfeito antes da estrada para Munique.",
- list:[
-  {n:"Stuttgarter Weihnachtsmarkt",addr:"Schlossplatz, Marktplatz, Schillerplatz e Karlsplatz · Stuttgart",dates:"25/11 → 23/12/2026",hours:"Abertura em 25/11: estandes a partir das 17h, cerimônia às 18h no pátio do Altes Schloss · depois: Dom–Qui 11h–21h, Sex–Sáb 11h–22h",fit:"Qua 25/11, saindo do outlet às ~17h",what:"Cerca de 300 estandes com telhados decorados à mão (concurso entre os comerciantes) e registro desde 1692.",eat:"Glühwein na caneca do ano, Maultaschen e Schupfnudeln com chucrute."},
-  {n:"Mercado medieval de Esslingen",addr:"Altstadt de Esslingen am Neckar (entre Metzingen e Stuttgart)",dates:"Fim de nov → 22/12 (confirme 2026)",hours:"Confirme",fit:"Alternativa a Stuttgart, mais perto do caminho",what:"Mercado medieval com artesãos fantasiados, fogueiras e espetáculos numa cidade de casas em enxaimel.",eat:"Hidromel quente e pão no forno a lenha."}
- ]}
+ metzingen:{note:"Em 19/11 os mercados da região de Stuttgart ainda não abriram: o de Stuttgart começa em 25/11. Os mercados desta parte da viagem ficam em Munique, a partir de 20/11.",list:[]}
 };
 
 /* ---------- NÃO PODE FALTAR ---------- */
@@ -440,11 +438,13 @@ const MUSTS = {
   {c:"Comer",n:"Weißwurst antes do meio-dia",d:"Pela tradição, a salsicha branca \"não pode ouvir o sino do meio-dia\". Tira-se a pele (não se come) e acompanha Brezn, mostarda doce e Weißbier."},
   {c:"Comer",n:"Obatzda",d:"Pasta de queijo camembert com manteiga, páprica e cebola. É o petisco de cervejaria."},
   {c:"Comer",n:"Leberkäs-Semmel",d:"Fatia grossa de \"bolo de carne\" bávaro no pão. Não tem fígado nem queijo, apesar do nome. É o lanche de rua da cidade."},
+  {c:"Beber",n:"Hidromel no mercado medieval",d:"Met quente na caneca de barro do Wittelsbacherplatz. É a bebida do mercado medieval."},
   {c:"Beber",n:"Uma Maß no Hofbräuhaus",d:"Caneca de 1 litro. Ao brindar (\"Prost!\"), olhe nos olhos de cada um; pela superstição, quem não olha tem sete anos de azar."},
   {c:"Beber",n:"As 6 cervejarias de Munique",d:"Só Augustiner, Hacker-Pschorr, Hofbräu, Löwenbräu, Paulaner e Spaten podem servir na Oktoberfest. Façam a rodada."},
   {c:"Curiosidade",n:"A Lei da Pureza nasceu aqui",d:"A Reinheitsgebot de 1516, da Baviera, limitava a cerveja a água, cevada e lúpulo. É uma das leis alimentares mais antigas do mundo."},
   {c:"Curiosidade",n:"O Glockenspiel conta duas histórias",d:"As figuras encenam um casamento real de 1568 e a dança dos tanoeiros, que comemora o fim da peste."},
-  {c:"Fazer",n:"Surfistas no Eisbach",d:"Uma onda permanente num riacho do Englischer Garten, surfada até em novembro, de roupa de neoprene."}
+  {c:"Fazer",n:"Surfistas no Eisbach",d:"Uma onda permanente num riacho do Englischer Garten, surfada até em novembro, de roupa de neoprene."},
+  {c:"Fazer",n:"Jogo na Allianz Arena",d:"O estádio muda de cor por fora: vermelho em jogo do Bayern. Cheguem cedo para ver a curva sul (Südkurve) cantando."}
  ],
  austria:[
   {c:"Comer",n:"Kaiserschmarrn",d:"Panqueca grossa rasgada, caramelizada, com açúcar e compota de ameixa. A lenda diz que o nome vem do imperador Francisco José."},
@@ -476,17 +476,18 @@ const MUSTS = {
 };
 
 const CHECKLIST = [
- {id:"vaticano",t:"Museus Vaticanos · Ter 17/11",s:"Site oficial museivaticani.va, horário da tarde"},
- {id:"coliseu",t:"Coliseu · Ter 17/11, 9h",s:"Ingresso combinado com Fórum e Palatino"},
+ {id:"vaticano",t:"Museus Vaticanos · Ter 17/11",s:"No horário livre da reunião com o Alessandro"},
+ {id:"coliseu",t:"Coliseu · Seg 16/11",s:"Ingresso combinado com Fórum e Palatino"},
  {id:"pantheon",t:"Pantheon · €7",s:"Só no site oficial"},
  {id:"jantaresroma",t:"Reservas em Roma",s:"Roscioli, Armando, Pierluigi ou Checchino"},
- {id:"carro",t:"Locadora: pneus e República Tcheca",s:"Confirmar pneus de inverno e autorização para cruzar a fronteira"},
+ {id:"bayern",t:"Ingressos Bayern × Köln · Sex 20/11, 20h30",s:"Ingresso oficial; ele vale como passe de transporte no dia"},
+ {id:"carro",t:"Locadora: carro a partir de 19/11",s:"Pneus de inverno e autorização para entrar na República Tcheca"},
  {id:"vinhetaat",t:"Vinheta da Áustria",s:"Comprar em posto ou revendedor com validade imediata"},
- {id:"vinhetacz",t:"Vinheta tcheca (edalnice.cz)",s:"Antes de cruzar a fronteira, dia 22/11"},
- {id:"neusch",t:"Neuschwanstein · Sex 20/11",s:"Opcional, ingresso com horário"},
+ {id:"vinhetacz",t:"Vinheta tcheca (edalnice.cz)",s:"Antes de cruzar a fronteira, dia 23/11"},
+ {id:"neusch",t:"Neuschwanstein · Sáb 21/11",s:"Opcional, ingresso com horário"},
  {id:"spa",t:"Massagem no AQUA DOME",s:"Reservar o horário no spa"},
- {id:"iceq",t:"ice Q · Sáb 21/11",s:"Confirmar abertura do inverno e reservar mesa"},
- {id:"praga",t:"Jantar em Praga",s:"Mlýnec ou Field e mesa no Hemingway Bar"},
+ {id:"iceq",t:"ice Q · Dom 22/11",s:"Confirmar abertura do inverno e reservar mesa"},
+ {id:"praga",t:"Jantar em Praga · Ter 24/11",s:"Mlýnec ou Field e mesa no Hemingway Bar"},
  {id:"taxfree",t:"Tax free",s:"Passaporte em mãos no outlet e tempo extra no aeroporto dia 26"}
 ];
 
@@ -534,10 +535,10 @@ function renderOverview(){
    <div class="alerts" style="margin:0">
     <div class="alert red">🚗 <b>Vinhetas</b>: Alemanha não cobra pedágio de carro. A Áustria exige vinheta digital (comprem em posto ou revendedor; online na ASFINAG só vale depois de 18 dias). A República Tcheca exige e-vinheta em edalnice.cz. A fiscalização é por câmera nos dois países.</div>
     <div class="alert">❄️ <b>Pneus de inverno e fronteira</b>: na retirada do carro, confirmem pneus de inverno e autorização para entrar na República Tcheca.</div>
-    <div class="alert">🛣️ <b>Trechos longos</b>: Längenfeld → Praga ~6h (dia 22), Praga → Munique ~4h (dia 24) e Munique ↔ Metzingen ~2h30 cada perna (dia 25). Revezem o volante.</div>
-    <div class="alert green">🎄 <b>Mercados de Natal</b>: Innsbruck já está aberto (21/11), Munique abre em 20/11 (vocês pegam em 24 e 25) e Stuttgart abre em 25/11. Praga só em 28/11 e Roma só em dezembro.</div>
+    <div class="alert">🛣️ <b>Trechos longos</b>: Munique ↔ Metzingen ~2h30 cada perna (dia 19), Längenfeld → Praga ~6h (dia 23) e Praga → Munique ~4h (dia 25). Revezem o volante.</div>
+    <div class="alert green">🎄 <b>Mercados de Natal</b>: Munique abre em 20/11, dia em que vocês estão lá, com o Christkindlmarkt e o mercado medieval; voltem em 25/11, com o Tollwood também aberto. Innsbruck já está aberto no dia 21. Praga só abre em 28/11, e Roma só em dezembro.</div>
     <div class="alert">🌅 <b>Dias curtos</b>: escurece entre ~16h10 (Praga) e ~16h50 (Roma). Façam a estrada e as montanhas com luz do dia.</div>
-    <div class="alert">🧾 <b>Tax free</b>: carimbo na alfândega do aeroporto de Munique antes do check-in, no dia 26.</div>
+    <div class="alert">🧾 <b>Tax free</b>: carimbo na alfândega do aeroporto de Munique antes do check-in, no dia 26. ⚽ <b>Bayern × Köln</b>: sexta, 20/11, às 20h30.</div>
    </div>
   </div>`;
   el.querySelectorAll("[data-go]").forEach(t=>t.addEventListener("click",()=>location.hash=t.dataset.go));
